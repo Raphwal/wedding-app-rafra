@@ -1,9 +1,7 @@
-from navigation import make_sidebar, collapse_sidebar
 import streamlit as st
 import pandas as pd
 import pydeck as pdk
 
-make_sidebar()
 
 st.markdown(
     """

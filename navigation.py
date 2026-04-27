@@ -1,72 +1,60 @@
 import streamlit as st
 from time import sleep
-from streamlit.runtime.scriptrunner import get_script_run_ctx
-from streamlit.source_util import get_pages
-
-
-def get_current_page_name():
-    ctx = get_script_run_ctx()
-    if ctx is None:
-        raise RuntimeError("Could not get script context")
-
-    pages = get_pages("")
-
-    return pages[ctx.page_script_hash]["page_name"]
-
-
-def make_sidebar():
-    st.markdown(
-    """
-    <style>
-        section[data-testid="stSidebar"] {
-            width: 150px !important; # Set the width to your desired value
-        }
-    </style>
-    """,
-    unsafe_allow_html=True,
-    )
-    
-    with st.sidebar:
-        st.title("Neda & Peter :bouquet:")
-        st.write("")
-        st.write("")
-
-        if st.session_state.get("logged_in", False):
-            st.page_link("pages/p01_startseite.py",     label="Startseite",     icon="❣️")
-            st.page_link("pages/p02_ablaufplan.py",     label="Ablaufplan",     icon="⌚")
-            st.page_link("pages/p03_unterkunft.py",     label="Unterkunft",     icon="🏡")
-            st.page_link("pages/p04_speisekarte.py",    label="Speisekarte",    icon="🥢")
-            st.page_link("pages/p05_ort.py",            label="Anfahrt",        icon="🚘")
-            st.page_link("pages/p06_mitfahrboerse.py",  label="Mitfahrbörse",   icon="🚏")
-            st.page_link("pages/p07_faq.py",            label="FAQ",            icon="❓")
-
-            st.write("")
-            st.write("")
-
-            if st.button("Abmelden"):
-                logout()
-
-        elif get_current_page_name() != "main":
-            # If anyone tries to access a secret page without being logged in,
-            # redirect them to the login page
-            st.switch_page("main.py")
-
-
-
-def collapse_sidebar():
-    collapse_sidebar_js = """
-        <script>
-            setTimeout(function() {
-                let sidebar = window.parent.document.querySelector("section[data-testid='stSidebar']");
-                if (sidebar) { sidebar.style.display = 'none'; }
-            }, 300);
-        </script>
-    """
-    st.markdown(collapse_sidebar_js, unsafe_allow_html=True)
-
 
 def logout():
     st.session_state.logged_in = False
-    st.info("Logged out successfully!")
+    st.session_state.pwd_correct = False
+    st.info("Abmeldung erfolgreich...")
     sleep(0.5)
-    st.switch_page("main.py")
+    st.rerun()
+
+def check_login():
+    """Prüft das Passwort und setzt den Login-Status."""
+    if st.session_state['pwd'] == st.secrets['password']:
+        st.session_state['pwd_correct'] = True
+        st.session_state['logged_in'] = True
+    else:
+        st.session_state['pwd_correct'] = False
+
+def login_page():
+    """Die Seite, die vor dem Login angezeigt wird."""
+    st.title("Schön, dass Ihr hergefunden habt.")
+    st.write("Bitte den in der Einladung beigefügten Code eintragen, um fortzufahren.")
+    
+    with st.form("login_form"):
+        st.text_input("Code", type="password", key="pwd")
+        if st.form_submit_button("Login", on_click=check_login):
+            if st.session_state.logged_in:
+                st.rerun()
+    
+    if "pwd_correct" in st.session_state and not st.session_state.pwd_correct:
+        st.error("Code nicht gültig")
+
+def get_navigation():
+    """Erstellt die Navigationsstruktur basierend auf dem Login-Status."""
+    
+    # Definition der Seiten-Objekte
+    p_login = st.Page(login_page, title="Login", icon="🔒")
+    p_logout = st.Page(logout, title="Abmelden", icon="🚶")
+
+    p1 = st.Page("pages/p01_startseite.py",   title="Startseite",    icon="❣️")
+    p2 = st.Page("pages/p02_ablaufplan.py",   title="Ablaufplan",    icon="⌚")
+    p3 = st.Page("pages/p03_unterkunft.py",   title="Unterkunft",    icon="🏡")
+    p4 = st.Page("pages/p04_speisekarte.py",  title="Speisekarte",   icon="🥢")
+    p5 = st.Page("pages/p05_ort.py",          title="Anfahrt",       icon="🚘")
+    p6 = st.Page("pages/p06_mitfahrboerse.py", title="Mitfahrbörse",  icon="🚏")
+    p7 = st.Page("pages/p07_faq.py",           title="FAQ",           icon="❓")
+
+    if st.session_state.get("logged_in", False):
+        # Wenn eingeloggt: Zeige Top-Navigation
+        # Die erste Seite in der Liste (p1) ist die Standard-Startseite
+        return st.navigation(
+            {
+                "Neda & Peter 💐": [p1, p2, p3, p4, p5, p6, p7],
+                "Optionen": [p_logout]
+            }, 
+            position="top" # <-- Hier passiert die Magie!
+        )
+    else:
+        # Wenn nicht eingeloggt: Zeige nur die Login-Maske (ohne Menü)
+        return st.navigation([p_login], position="hidden")

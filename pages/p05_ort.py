@@ -1,7 +1,5 @@
-from navigation import make_sidebar, collapse_sidebar
 import streamlit as st
 
-make_sidebar()
 
 st.markdown(
     """

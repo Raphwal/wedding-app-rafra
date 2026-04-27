@@ -1,8 +1,6 @@
-from navigation import make_sidebar, collapse_sidebar
 import streamlit as st
 import streamlit.components.v1 as components
 
-make_sidebar()
 
 form_url = "https://forms.gle/y2YtYHRe11mX2RLr6"
 
