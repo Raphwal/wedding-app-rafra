@@ -37,13 +37,13 @@ def get_navigation():
     p_login = st.Page(login_page, title="Login", icon="🔒")
     p_logout = st.Page(logout, title="Abmelden", icon="🚶")
 
-    p1 = st.Page("pages/p01_startseite.py",   title="Startseite",    icon="❣️")
-    p2 = st.Page("pages/p02_ablaufplan.py",   title="Ablaufplan",    icon="⌚")
-    p3 = st.Page("pages/p03_unterkunft.py",   title="Unterkunft",    icon="🏡")
-    p4 = st.Page("pages/p04_speisekarte.py",  title="Speisekarte",   icon="🥢")
-    p5 = st.Page("pages/p05_ort.py",          title="Anfahrt",       icon="🚘")
-    p6 = st.Page("pages/p06_mitfahrboerse.py", title="Mitfahrbörse",  icon="🚏")
-    p7 = st.Page("pages/p07_faq.py",           title="FAQ",           icon="❓")
+    p1 = st.Page("views/p01_startseite.py",   title="Startseite",    icon="❣️")
+    p2 = st.Page("views/p02_ablaufplan.py",   title="Ablaufplan",    icon="⌚")
+    p3 = st.Page("views/p03_unterkunft.py",   title="Unterkunft",    icon="🏡")
+    p4 = st.Page("views/p04_speisekarte.py",  title="Speisekarte",   icon="🥢")
+    p5 = st.Page("views/p05_ort.py",          title="Anfahrt",       icon="🚘")
+    p6 = st.Page("views/p06_mitfahrboerse.py", title="Mitfahrbörse",  icon="🚏")
+    p7 = st.Page("views/p07_faq.py",           title="FAQ",           icon="❓")
 
     if st.session_state.get("logged_in", False):
         # Wenn eingeloggt: Zeige Top-Navigation
