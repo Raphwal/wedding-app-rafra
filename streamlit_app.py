@@ -13,7 +13,10 @@ st.markdown("""
         /* Hintergrund-Farbe und eine leichte Textur-Simulation */
         .stApp {
             background-color: #EEDC9A;
-            background-image: url("https://www.transparenttextures.com/patterns/linen-paper.png");
+            background-image: 
+            linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
+            linear-gradient(rgba(255,255,255,.07) 50%, transparent 50%);
+            background-size: 4px 4px;
         }
 
         /* Styling für die dunkelbraune Serif-Schrift (wie im Bild oben) */
