@@ -48,13 +48,7 @@ def get_navigation():
     if st.session_state.get("logged_in", False):
         # Wenn eingeloggt: Zeige Top-Navigation
         # Die erste Seite in der Liste (p1) ist die Standard-Startseite
-        return st.navigation(
-            {
-                "Neda & Peter 💐": [p1, p2, p3, p4, p5, p6, p7],
-                "Optionen": [p_logout]
-            }, 
-            position="top" # <-- Hier passiert die Magie!
-        )
+        return st.navigation([p1],position="top")
     else:
         # Wenn nicht eingeloggt: Zeige nur die Login-Maske (ohne Menü)
         return st.navigation([p_login], position="hidden")
