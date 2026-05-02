@@ -3,5 +3,12 @@ ENCRYPTED_CONTENT = {
     "adresse_kirche": "gAAAAABp9bysjMaBk1-eSgXaDNJ6glk0cNSqrrbXJsUYc8U6kvjiQ8gQLPMj2mTRE8iI_8Df7-DHwlgw2yh9c5Hfiqaeq5lvP0OgWA6zqjUVL5UPZFG1BTIHVxh0Olf7DkmOv6qxHxLz",
     "telefon_gabriel": "gAAAAABp9bysSyJQQ8OQJYprobAXIXhY3QDMKgf28PhIp_u5XP3F3278a4I9iOztf9RWXs5idS_kxwHutfl2m5zn0BX3PL0D2w==",
     "google_maps_link": "gAAAAABp9bys-aqmYRTX37bcCKwkq32gdZ4giOHnSLCuQ1yR-7hsoGgfxROJP1TAyQB0Ot5YF11E4eAedLc_JK1hdvWD3iU6Jaz3NguOKQJFMShKSs0cdivJHGyPHmM2SRX7MRx1Q6xvvIPMFeIUf7EGxTp_ra3DVdLgzfiNd0xrFOjUHFRHVApbw8N8B0B4fmzGxL46ZHGCk8jyvQDrGa9A4I0npAbBTnY7acbDl_L31UGo1-7vRTTslap9GuuTGkrEHKL8JAAkik-ubJDvpjnrAranrChF8se9Q42gT0mwwx3MuN8oOPPng6SIlJ-gBDPf7viLmMfYo644NBPfJRdkzC2nc5hbkyCc1xxRFkM0lDYAZWxyTVz2wB2zlLMasJu50xcEH1ayuHkzvAVKhmDo-RQszD6Ow5vCLQfVACSENIiHZAofXH1GPMEL7j4sDLygcpYQcY43TkrBLC90Dx9v2i72i7VvdA==",
+    "name_trauzeuge": "gAAAAABp9hTcBWlquno--3apDRFMCj-VifAx3VsTRlgP-VJmRbHLzwY3d-8wrkdRW9ZsD-zxK29BvqQPh-3N2E03gUrHqn75_A==",
+    "mail_trauzeuge": "gAAAAABp9hTcajoBK3RPtb1ZeBDa8UzIZwnpBK9wgwP8n7JzDQfEw-m_o9Qc8pXjy7JHEzy29C_3pwX3UQbjczEmX4BFOPsyZjvn9zUrmsuYC1jzYuhQluo=",
+    "name_trauzeugin": "gAAAAABp9hTcI3ThOMYnWCPe7LYHx78FtFWAL3UkO1_AiJULM3GnskP7Qn67cuEq3woq144mWww_GJd_YKjspoRF3VOAGbqN1glQIHunVa-tXHi1DdEFSnZAth7bihjd9i8pUJ1KXv2l",
+    "mail_trauzeugin": "gAAAAABp9hTcqlPBYruZuDNX4XSIJN4GtmZlB43tZ4IYw9W086-MJa6XvviImuYJKD0mquVFPxIC0qVCEwoowiUrXrO6yFvz4Q==",
+    "date1": "gAAAAABp9hawvXKyvOmxyvVZUVsp2yflgD9zRxMusV3kcvySig6TthARoN7LaS8uq6eIeGHlZ-hliWio2-m5swFR9KydStS8Tg==",
+    "date2": "gAAAAABp9hawajqRjHzmBg86Z9l8q_XNF68Oiq1ti8m2iq1Fp0PyO2j6KtsUuyt8lFIyT04zpYCTOZt4WSKbjur9ON7SuHBnEg==",
+    "location_name": "gAAAAABp9hhKa8PDf7-F55kY6OAvsptDSHgH66jWUSwy2GdIffnpCH5ZG3ENS0Y65rse_EC2DvyPJlq1CNfJjAsR9m2iwu9aAw==",
 
 }

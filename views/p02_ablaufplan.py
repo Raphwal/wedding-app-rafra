@@ -1,85 +1,88 @@
 import streamlit as st
+from utils import decrypt_text
+from views.data import ENCRYPTED_CONTENT
 
 
+# --- (VERSCHLÜSSELT) ---
+kontakt_name = decrypt_text(ENCRYPTED_CONTENT["name_trauzeuge"])
+kontakt_mail = decrypt_text(ENCRYPTED_CONTENT["mail_trauzeuge"])
+date1 = decrypt_text(ENCRYPTED_CONTENT["date1"])
+date2 = decrypt_text(ENCRYPTED_CONTENT["date2"])
+location_name = decrypt_text(ENCRYPTED_CONTENT["location_name"])
+
+# 1. Page-spezifisches CSS (Nur für das Layout der Boxen)
 st.markdown(
     """
     <style>
-        body {
-            background-color: #F5F3FF;
-            color: #4A3B5C;
-            font-family: serif;
-        }
-        .title {
-            color: #D1C4E9;
-            font-size: 36px;
-            font-weight: bold;
-            text-align: left;
-        }
         .subtitle {
-            font-size: 24px;
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
             font-weight: bold;
-            color: #6A4CA8;
+            color: #3D2B1F; /* Dunkelbraun wie im Bild */
             margin-top: 20px;
-            text-align: left;
         }
         .event {
             font-size: 18px;
             margin: 10px 0;
-            padding: 10px;
-            background-color: #EDE7F6;
-            border-left: 5px solid #D1C4E9;
+            padding: 15px;
+            background-color: rgba(61, 43, 31, 0.05); /* Sehr dezentes Braun */
+            border-left: 5px solid #3D2B1F; /* Brauner Akzent-Balken */
             border-radius: 5px;
-            text-align: left;
+            color: #3D2B1F;
         }
-        .contact {
+        .contact-box {
             font-size: 18px;
-            color: #4A3B5C;
-            text-align: left;
+            color: #3D2B1F;
             margin-top: 30px;
+            padding: 15px;
+            border: 1px dashed #3D2B1F;
+            border-radius: 10px;
         }
     </style>
     """,
     unsafe_allow_html=True
 )
 
-# Titel
-st.markdown('<h1 class="title">Ablaufplan</h1>', unsafe_allow_html=True)
+# Titel (Nutzt die Klasse aus deiner main.py)
+st.markdown('<h1 class="serif-text">Ablaufplan</h1>', unsafe_allow_html=True)
 
-# Samstag
-st.divider()
-st.markdown('<h2 class="subtitle">Samstag, 27.09.2025</h2>', unsafe_allow_html=True)
+# --- Day 1 ---
+st.markdown(f'<h2 class="subtitle">Freitag, <b>{date1}</b> </h2>', unsafe_allow_html=True)
 
-events_saturday = [
-    ("Check-In im Landhaus Alte Scheune", "ab 14:30 Uhr"),
-    ("Empfang & Fotos", "ab 16:00 Uhr"),
-    ("Zeremonie", "ab 17:00 Uhr"),
-    ("Grillbuffet", "ab 18:00 Uhr"),
-    ("Kleine Überraschung vor dem Dessert", "ca. 19:30 Uhr"),
-    ("Karaoke & Dessertbuffet", "ab ca. 20:15 Uhr"),
-    ("Eröffnung der Tanzfläche", "ab ca. 21:00 Uhr"),
-    ("Mitternachtssnack", "ab ca. 23:30 Uhr")
+events_day1 = [
+    (f"Empfang im {location_name}", "ab 16:00 Uhr"),
+    (f"Beginn der freien Trauung", "ab 16:30 Uhr"),
+    (f"Fotos", "ab 17:00 Uhr"),
+    (f"Buffet", "ab 18:30 Uhr"),
+    (f"Torte anschneiden & Dessert", "ca. 20:00 Uhr"),
+    (f"Eröffnung der Tanzfläche", "ab ca. 21:00 Uhr"),
+    (f"Mitternachtssnack", "ab ca. 23:30 Uhr")
 ]
 
-for event, time in events_saturday:
+for event, time in events_day1:
     st.markdown(f'<div class="event"><b>{time}</b>: {event}</div>', unsafe_allow_html=True)
 
 st.divider()
 
-# Sonntag
-st.markdown('<h2 class="subtitle">Sonntag, 28.09.2025</h2>', unsafe_allow_html=True)
+# --- Day 2 ---
+st.markdown(f'<h2 class="subtitle">Samstag, <b>{date2}</b> </h2>', unsafe_allow_html=True)
 
-events_sunday = [
-    ("Frühstück", "08:00 bis 10:30 Uhr"),
-    ("Check-Out", "bis 11:30 Uhr")
+events_day2 = [
+    (f"Frühstück im {location_name} Restaurant (für alle die wollen) - bitte Info geben", "09:00 bis 10:30 Uhr"),
+    (f"Check-Out", "bis 11:00 Uhr")
 ]
 
-for event, time in events_sunday:
+for event, time in events_day2:
     st.markdown(f'<div class="event"><b>{time}</b>: {event}</div>', unsafe_allow_html=True)
 
 st.divider()
 
-# Ideensammlung
+# --- Kontakt-Box ---
 st.markdown(
-    '<div class="contact">💡 Möchtet ihr einen Programmpunkt beisteuern? Meldet euch gerne bei <b>Eric Hensel</b> unter <a href="mailto:eric.hensel@alte-scheune.de">eric.hensel@alte-scheune.de</a></div>',
-    unsafe_allow_html=True
-)
+    f"""
+    <div class="contact-box">
+        💡 Möchtet ihr einen Programmpunkt beisteuern? <br>
+        Meldet euch gerne bei <b>{kontakt_name}</b> unter: 
+        <a href="mailto:{kontakt_mail}" style="color: #3D2B1F;">{kontakt_mail}</a>
+    </div>
+    """, unsafe_allow_html=True)
