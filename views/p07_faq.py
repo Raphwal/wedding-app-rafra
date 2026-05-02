@@ -1,5 +1,5 @@
 import streamlit as st
-from utils import decrypt_text
+from utils import load_decrypted_image, decrypt_text
 from views.data import ENCRYPTED_CONTENT
 
 # Daten entschlüsseln
@@ -73,7 +73,8 @@ with st.expander("🛏️ Gibt es Kinderbetten im Hotel?"):
 with st.expander("🐶 Dürfen Haustiere mitgebracht werden?"):
     st.write("Vierbeinige Gäste (auch Achtbeinige) müssen leider draußen bleiben. Das gilt leider auch für Filou, der sicherlich auch wahnsinnig gern in der Menschenmenge verschwunden wäre. " \
     "Wir hoffen ein paar extra Leckerlis können die Situation lösen und bitten um euer Verständnis.  ")
-
+    img_data = load_decrypted_image("assets/cat.bin")
+    st.image(img_data, caption="Echt jetzt?")
 with st.expander("Können wir uns auch Songs wünschen? "):
     st.write("Ihr habt einen Lieblingssong, der unbedingt auf die Tanzfläche muss? Sehr gern! Tragt eure Musikwünsche einfach im Rückmeldeformular ein. (Es gibt keine Garantie, dass alle Wünsche erfüllt werden können, aber wir geben unser Bestes 😉)")
 
@@ -88,6 +89,8 @@ with st.expander("Wie große wird die Feier sein?"):
 st.markdown('<h3 class="subtitle">Während der Hochzeit</h3>', unsafe_allow_html=True)
 with st.expander("Was passiert bei schlechtem Wetter?"):
     st.write("Keine Sorge, es muss niemand im Regen stehen, es gibt einen trockenen Plan B.")
+    img_data = load_decrypted_image("assets/herz.bin")
+    st.image(img_data, caption="Wir machen das beste draus!")
 
 with st.expander("Dürfen Blumen/Konfetti oder ähnliches gestreut werden?"):
     st.write("Bitte nicht! Sowohl das streuen von Blüten, Konfetti als auch Reis im Innen- und Außenbereich sind nicht erlaubt und wird für uns teuer. ")

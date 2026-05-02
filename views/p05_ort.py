@@ -102,4 +102,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-
+# picture
+st.markdown('<h2 class="subtitle">🗺️ Lageplan</h2>', unsafe_allow_html=True)
+img_data = load_decrypted_image("assets/Lageplan.bin")
+st.image(img_data)

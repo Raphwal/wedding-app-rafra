@@ -12,8 +12,8 @@ date1 = decrypt_text(ENCRYPTED_CONTENT["date1"])
 location_name = decrypt_text(ENCRYPTED_CONTENT["location_name"])
 
 # picture
-img_data2 = load_decrypted_image("assets/auf_hand_tragen.bin")
-st.image(img_data2, caption="Auf Hand Tragen!")
+img_data = load_decrypted_image("assets/Hochzeit_teaser.bin")
+st.image(img_data, caption="Foto aus Straßburg")
 
 st.markdown(f"""
 ## Liebe Gäste,
@@ -34,13 +34,14 @@ st.markdown("""
 """)
 
 components.html(f"""
-    <style>
+   <style>
         .responsive-iframe-container {{
             position: relative;
             width: 100%;
             height: 0;
-            padding-bottom: 150%; /* Adjust based on content ratio */
+            padding-bottom: 160%; /* Etwas mehr Platz für das Formular */
             overflow: hidden;
+            background-color: transparent;
         }}
         .responsive-iframe-container iframe {{
             position: absolute;
@@ -48,8 +49,11 @@ components.html(f"""
             left: 0;
             width: 100%;
             height: 100%;
-            border: 2px solid #ccc;
-            border-radius: 10px;
+            /* Rahmenfarbe auf dein Dunkelbraun angepasst */
+            border: 2px solid #3D2B1F; 
+            border-radius: 15px;
+            /* Ein weicher Schatten lässt das Formular auf dem Papier "liegen" */
+            box-shadow: 0 4px 12px rgba(61, 43, 31, 0.15);
         }}
     </style>
 
@@ -59,8 +63,9 @@ components.html(f"""
             frameborder="0"
             marginheight="0"
             marginwidth="0">
+            Lade Formular...
         </iframe>
     </div>
     """,
-    height=900,
+    height=1000, 
 )

@@ -1,6 +1,7 @@
 import streamlit as st
 from utils import decrypt_text
 from views.data import ENCRYPTED_CONTENT
+from utils import load_decrypted_image
 
 
 # --- (VERSCHLÜSSELT) ---
@@ -9,6 +10,9 @@ kontakt_mail = decrypt_text(ENCRYPTED_CONTENT["mail_trauzeugin"])
 date1 = decrypt_text(ENCRYPTED_CONTENT["date1"])
 date2 = decrypt_text(ENCRYPTED_CONTENT["date2"])
 location_name = decrypt_text(ENCRYPTED_CONTENT["location_name"])
+
+img_data = load_decrypted_image("assets/Ablaufplan.bin")
+st.image(img_data, caption="Foto von der Glücksburg")
 
 # 1. Page-spezifisches CSS (Nur für das Layout der Boxen)
 st.markdown(
@@ -45,7 +49,7 @@ st.markdown(
 )
 
 # Titel (Nutzt die Klasse aus deiner main.py)
-st.markdown('<h1 class="serif-text">Ablaufplan</h1>', unsafe_allow_html=True)
+#st.markdown('<h1 class="serif-text">Ablaufplan</h1>', unsafe_allow_html=True)
 
 # --- Day 1 ---
 st.markdown(f'<h2 class="subtitle">Freitag, <b>{date1}</b> </h2>', unsafe_allow_html=True)
