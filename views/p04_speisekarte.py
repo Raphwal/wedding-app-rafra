@@ -73,66 +73,95 @@ col1, col2 = st.columns(2)
 with col1:
     st.markdown('<p class="menu-section">🍹 Getränke</p>', unsafe_allow_html=True)
     st.markdown("""
-    * Prosecco / alkoholfrei
-    * Wasser (still & medium)
-    * Holunderblütensirup
-    * Orangensaft
+    *  Mineralwasser still | mit Kohlensäure 
+    *  Softdrinks (Cola, Cola Light, Fanta, Sprite, Fassbrause) 
+    *  Limobar 
+    *  Säfte/Saftschorlen (Apfel, Orange, Rhabarber) 
+    *  Sekt, Wein & Bier 
+    *  Kaffee, Kaffeespezialitäten & Tee 
     """)
 
 with col2:
     st.markdown('<p class="menu-section">🥪 Fingerfood</p>', unsafe_allow_html=True)
     st.markdown("""
-    * Canapé à la Bruschetta
-    * Canapé mit Spinat & Feta
-    * Wraps mit Avocado & Räucherlachs
+    * Lasst euch überraschen!
     """)
 
 # --- GETRÄNKE ---
-st.markdown('<h2 class="subtitle">Getränke ab 17:30 Uhr</h2>', unsafe_allow_html=True)
+st.markdown('<h2 class="subtitle">Getränke ab 17:00 Uhr</h2>', unsafe_allow_html=True)
 
 st.markdown("""
-* Wasser (still & medium)
-* Verschiedene Softdrinks
-* Frische Säfte aus der Wetterau
-* Heißgetränke & Kaffeespezialitäten
+*  Alles was es schon ab 16:00 Uhr gab und noch mehr! 
 """)
 
-st.markdown('<p class="menu-section">🍷 Weine & Bier</p>', unsafe_allow_html=True)
+st.markdown('<p class="menu-section">🍷 Weine </p>', unsafe_allow_html=True)
 st.markdown("""
-* **Weiß**: Sauvignon Blanc, Grauburgunder oder Muskateller (Fam. Pfaffmann)
-* **Schorle**: Die klassische Weißweinschorle
-* **Rot**: Vollmundiger Tempranillo
-* **Bier**: Ayinger vom Fass (Helles & Weizen), alkoholfreie Varianten aus der Flasche
-* **Lokal**: Ebbelwoi (pur, süß oder sauer gespritzt)
+* Riesling (weiß | feinherb) 
+* Grauburgunder (weiß | trocken) 
+* Rotling (rosé | fruchtig)  
+* Merlot (rot | trocken) 
+""")
+
+st.markdown('<p class="menu-section"> Biere </p>', unsafe_allow_html=True)
+st.markdown("""
+*  Pils vom Fass 
+*  Alkoholfreies Bier 
+*  Hefeweizen  
+*  Alkoholfreies Hefeweizen  
+*  Radler | Diesel 
+""")
+
+st.markdown('<p class="menu-section"> Aperitifs </p>', unsafe_allow_html=True)
+st.markdown("""
+*  Lilly’s (Lillet Blanc | Wildberry | Beeren | Eis) 
+*  Aperol Spritz (Aperol | Secco | Mineralwasser | Orange | Eis) 
+*  Rosa’s Tonic (Ramazotti Aperitivo Rosato | Tonic | Limette | Eis) 
+*  Limoncello (Limoncello | Secco | Zitrone | Eis) 
+*  Orange Spritz alkoholfrei (Orangensirup | Tonic | Wasser | Orange | Eis) 
+*  Virgin Hugo alkoholfrei (Holunderblütensirup | Ginger Ale | Wasser | Minze | Eis) 
 """)
 
 # --- BUFFET ---
-st.markdown('<h2 class="subtitle">Grillbuffet ab 18:00 Uhr</h2>', unsafe_allow_html=True)
+st.markdown('<h2 class="subtitle">Buffet – American BBQ ab 18:30 Uhr</h2>', unsafe_allow_html=True)
 
-st.markdown('<p class="menu-section">🥗 Salate & Beilagen</p>', unsafe_allow_html=True)
+st.markdown('<p class="menu-section">🥗 Salate & Vorspeisen</p>', unsafe_allow_html=True)
 st.markdown("""
-* Römersalat - B o h n e n , R a d i e s c h e n , K a r o t t e n , F r ü h l i n g s l a u c h ,
-P a l m e n h e r z e n , u n d A v o c a d o i n W a s a b i D r e s s i n g
-* Caprese & klassischer Gurkensalat
-* Mediterraner Spaghettisalat & Antipasti
-* Kartoffelsalat mit Zwiebeln & Krautsalat
-* Ofenkartoffeln mit Sour Cream & Brezelcher mit Spundekäs
+*  Römersalat  
+*  Bohnen, Radieschen, Karotten, Frühlingslauch, Palmenherzen, und Avocado in Wasabi Dressing 
+*  Klassischer Cole Slaw 
+*  Salat von Wassermelone und Hirtenkäse mit Zitronenöl 
+*  Chicken Caesar Wrap 
+*  Stadtgut“ Kartoffelsalat mit Salatgurke, Apfel und Mini Boulette  
 """)
 
 st.markdown('<p class="menu-section">🔥 Vom Grill</p>', unsafe_allow_html=True)
 st.markdown("""
-* Entrecôte & Schweinerollbraten (Idarer Art)
-* Lammrückenspieße & feine Hähnchenspieße
-* Saftiges Lachsfilet
-* Gegrillter Fetakäse
+*  Burger zum selber bauen Brioche Buns, 125g Rindfleisch Patty, Pulled Pork,  Tomaten, Gewürzgurken, Eisberg, Zwiebeln,  Bacon, Cheddar 
+*  Gebratenes Lachsfilet mit „Maldon“- Zitronensalz, Blattspinat und gebratener Polenta 
+*  Kleine Medaillons vom Roastbeef 
+*  Gemüsespieße 
+""")
+
+st.markdown('<p class="menu-section">Beilagen</p>', unsafe_allow_html=True)
+st.markdown("""
+*  Burger zum selber bauen Brioche Buns, 125g Rindfleisch Patty, Pulled Pork,  Tomaten, Gewürzgurken, Eisberg, Zwiebeln,  Bacon, Cheddar 
+*  Gebratenes Lachsfilet mit „Maldon“- Zitronensalz, Blattspinat und gebratener Polenta 
+*  Kleine Medaillons vom Roastbeef 
+*  Gemüsespieße 
+""")
+
+st.markdown('<p class="menu-section">Saucen</p>', unsafe_allow_html=True)
+st.markdown("""
+*  Maiskolben, Süßkartoffel- Stampf, Pikante Kartoffel- Wedges 
+*  Bohnen im Speckmantel 
+*  Hausgemachtes Kräuter & Knoblauch Baguette 
 """)
 
 st.markdown('<p class="menu-section">🍰 Desserts</p>', unsafe_allow_html=True)
 st.markdown("""
-* Mousse au Chocolat
-* Erfrischende Sorbets
-* Klassische Crème brûlée
-* Platte mit frischen Früchten der Saison
+*  Florida Mango Mousse mit Himbeer Jelly 
+*  Schokoladen Brownie 
+*  Cheesecake 
 """)
 
 # Abschluss

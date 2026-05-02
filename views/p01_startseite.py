@@ -3,19 +3,28 @@ import streamlit.components.v1 as components
 from utils import load_decrypted_image, decrypt_text
 from views.data import ENCRYPTED_CONTENT
 
+forms_url = decrypt_text(ENCRYPTED_CONTENT["forms_url"])
+location_name = decrypt_text(ENCRYPTED_CONTENT["location_name"])
+adresse_location = decrypt_text(ENCRYPTED_CONTENT["adresse_location"])
+link_location = decrypt_text(ENCRYPTED_CONTENT["link_location"])
+couple_name = decrypt_text(ENCRYPTED_CONTENT["couple_name"])
+date1 = decrypt_text(ENCRYPTED_CONTENT["date1"])
+location_name = decrypt_text(ENCRYPTED_CONTENT["location_name"])
 
-form_url = "https://forms.gle/y2YtYHRe11mX2RLr6"
+# picture
+img_data2 = load_decrypted_image("assets/auf_hand_tragen.bin")
+st.image(img_data2, caption="Auf Hand Tragen!")
 
 st.markdown(f"""
 ## Liebe Gäste,
-wir freuen uns, am **27.09.2025** mit euch im Landhaus [Alte Scheune](https://www.alte-scheune.de/) unsere Hochzeit zu feiern!
-Alle wichtigen Informationen haben wir hier zusammengestellt. Damit auch wir die beste Feier für euch planen können, bitten wir euch bis spätestens zum **15.05.2025** eure Rückmeldungen über folgendes [Google Formular]({form_url}) zu geben.
+wir freuen uns, am **{date1}** mit euch im {location_name} ({link_location}) unsere Hochzeit zu feiern!
+Alle wichtigen Informationen haben wir hier zusammengestellt. Damit auch wir die beste Feier für euch planen können, bitten wir euch bis spätestens zum **31.12.2026** eure Rückmeldungen über folgendes [Google Formular]({forms_url}) zu geben.
 Wir haben das Formular auch für euch eingebettet.
 
 Solltet ihr versehentlich eine falsche Angabe gemacht haben, füllt das Formular einfach erneut aus. Wir werten die jüngste Rückmeldung aus.
 
 **Liebe Grüße**<br>
-Neda & Peter
+{couple_name}
 """, unsafe_allow_html=True)
 
 st.divider()
@@ -46,7 +55,7 @@ components.html(f"""
 
     <div class="responsive-iframe-container">
         <iframe
-            src="{form_url}"
+            src="{forms_url}"
             frameborder="0"
             marginheight="0"
             marginwidth="0">
@@ -55,7 +64,3 @@ components.html(f"""
     """,
     height=900,
 )
-
-
-img_data2 = load_decrypted_image("assets/auf_hand_tragen.bin")
-st.image(img_data2, caption="Auf Hand Tragen!")
