@@ -37,6 +37,7 @@ st.markdown(
             padding: 15px;
             border: 1px dashed #3D2B1F;
             border-radius: 10px;
+            text-align: center;
         }
     </style>
     """,

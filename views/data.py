@@ -10,5 +10,8 @@ ENCRYPTED_CONTENT = {
     "date1": "gAAAAABp9hawvXKyvOmxyvVZUVsp2yflgD9zRxMusV3kcvySig6TthARoN7LaS8uq6eIeGHlZ-hliWio2-m5swFR9KydStS8Tg==",
     "date2": "gAAAAABp9hawajqRjHzmBg86Z9l8q_XNF68Oiq1ti8m2iq1Fp0PyO2j6KtsUuyt8lFIyT04zpYCTOZt4WSKbjur9ON7SuHBnEg==",
     "location_name": "gAAAAABp9hhKa8PDf7-F55kY6OAvsptDSHgH66jWUSwy2GdIffnpCH5ZG3ENS0Y65rse_EC2DvyPJlq1CNfJjAsR9m2iwu9aAw==",
+    "mail_hotel": "gAAAAABp9hxrtgkUHN8QArpP2mbsGHYOyYuHiNDKv1tTW6PfL4mu7zcjCzlf1OC6Pz2BjOBTf5sgtVkfsNnO1rkLTteICc0lQaC1eHOxEuFc4tB1Bm9fe1c=",
+    "tele_hotel": "gAAAAABp9hxr0-7sgSCjWNkhp4Ssxe349Yz64mqLqWHY15Or39qYBVHHpEC4UGCp3JLOLnLhR8YGJ9P0NCS8Tu-SSpSb25988OZBWQxBI5NvIl9_D7i2_YE=",
+    "couple_name": "gAAAAABp9h05ciH5hLiX2pkMlYXy4QEKI_7hW4D58xMxdXaJVA23m3B8G7Q2CH2BhvPQ8JJPeRzspZmxdPzFoLy650HuvHsLUbqfPYc5zTchsttK35l-EEE=",
 
 }
