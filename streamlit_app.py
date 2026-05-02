@@ -1,5 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
+from utils import set_encrypted_bg
 
 # 1. Konfiguration
 st.set_page_config(layout="wide", initial_sidebar_state="collapsed")
@@ -7,19 +8,17 @@ st.set_page_config(layout="wide", initial_sidebar_state="collapsed")
 # CSS für Hintergrund-Textur, Schriftarten und Text-Schatten
 st.markdown("""
     <style>
-        /* Import der eleganten Serif-Schrift */
+        /* 1. Schriften importieren */
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@700&display=swap');
 
-        /* Hintergrund-Farbe und eine leichte Textur-Simulation */
+        /* 2. Basis-Hintergrund (Nur Farbe als Fallback) */
         .stApp {
             background-color: #EEDC9A;
-            background-image: 
-            linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
-            linear-gradient(rgba(255,255,255,.07) 50%, transparent 50%);
-            background-size: 4px 4px;
+            /* Der background-image Teil wurde entfernt, 
+               da dies jetzt von set_encrypted_bg übernommen wird */
         }
 
-        /* Styling für die dunkelbraune Serif-Schrift (wie im Bild oben) */
+        /* 3. Styling für die Schriften (bleibt gleich) */
         .serif-text {
             font-family: 'Playfair Display', serif;
             color: #3D2B1F;
@@ -29,17 +28,25 @@ st.markdown("""
             margin-bottom: 20px;
         }
 
-        /* Styling für die weiße Sans-Serif Schrift mit Schatten (wie im Bild unten) */
         .sans-white-text {
             font-family: 'Montserrat', sans-serif;
             color: #FFFFFF;
             font-size: 18px;
             text-align: center;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.6); /* Schatten etwas verstärkt für Lesbarkeit */
             line-height: 1.2;
+        }
+        
+        /* Optional: Macht die Boxen der App (Widgets) leicht transparent, 
+           damit man das Hintergrundbild durchschimmern sieht */
+        [data-testid="stVerticalBlock"] > div {
+            background-color: rgba(238, 220, 154, 0.1); 
+            border-radius: 10px;
         }
     </style>
 """, unsafe_allow_html=True)
+
+set_encrypted_bg("assets/Hintergrund.bin")
 
 # 2. Login-Logik (wie gehabt)
 if "logged_in" not in st.session_state:

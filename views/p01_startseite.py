@@ -57,8 +57,5 @@ components.html(f"""
 )
 
 
-img_data = load_decrypted_image("assets/test.bin")
-st.image(img_data, caption="Testbild!")
-
 img_data2 = load_decrypted_image("assets/auf_hand_tragen.bin")
 st.image(img_data2, caption="Auf Hand Tragen!")
