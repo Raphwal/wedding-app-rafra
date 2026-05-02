@@ -48,7 +48,7 @@ st.markdown("""
 
 set_encrypted_bg("assets/Hintergrund.bin")
 
-# 2. Login-Logik (wie gehabt)
+# 2. Login-Logik
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
 
@@ -61,8 +61,7 @@ def check_login():
 # 3. Anzeige der Navigation ODER Login
 if not st.session_state.logged_in:
     st.title("Schön, dass Ihr hergefunden habt.")
-    st.markdown('<div class="header-text">Wir heiraten und freuen uns darauf mit Euch gemeinsam zu feiern!</div>', unsafe_allow_html=True)
-    st.markdown('<div class="sub-text">Weitere Informationen findet ihr auf unserer Hochzeitswebsite unter:</div>', unsafe_allow_html=True)
+    st.markdown('<div class="header-text">Bitte gebt das Passwort ein!</div>', unsafe_allow_html=True)
     with st.form("login"):
         st.text_input('Passwort:', type="password", key="pwd")
         st.form_submit_button("Anmelden", on_click=check_login)
