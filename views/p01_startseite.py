@@ -1,5 +1,7 @@
 import streamlit as st
 import streamlit.components.v1 as components
+from utils import load_decrypted_image, decrypt_text
+from views.data import ENCRYPTED_CONTENT
 
 
 form_url = "https://forms.gle/y2YtYHRe11mX2RLr6"
@@ -53,3 +55,10 @@ components.html(f"""
     """,
     height=900,
 )
+
+
+img_data = load_decrypted_image("assets/test.bin")
+st.image(img_data, caption="Testbild!")
+
+img_data2 = load_decrypted_image("assets/auf_hand_tragen.bin")
+st.image(img_data2, caption="Auf Hand Tragen!")

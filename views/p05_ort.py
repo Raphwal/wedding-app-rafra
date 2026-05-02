@@ -1,6 +1,9 @@
 import streamlit as st
+from utils import load_decrypted_image, decrypt_text
+from views.data import ENCRYPTED_CONTENT
 
-
+adresse = decrypt_text(ENCRYPTED_CONTENT["adresse_kirche"])
+st.write(f"Unsere Location: **{adresse}**")
 st.markdown(
     """
     <style>
@@ -107,7 +110,7 @@ st.markdown(
     """
     <p class="text">
         <b>Adresse:</b>
-        Im Sauern 10, 60437 Frankfurt am Main <br>
+        **{adresse}** <br>
         Vom Parkplatz aus sind es <b>350m oder 5 Minuten zu Fuß</b> zum Landhaus Alte Scheune.
     </p>
     """,
