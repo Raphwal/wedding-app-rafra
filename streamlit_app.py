@@ -70,8 +70,8 @@ else:
     # Diese Leiste erscheint oben auf der Seite
     selected = option_menu(
         menu_title=None, 
-        options=["Startseite", "Ablaufplan", "Unterkunft", "Anfahrt", "Abmelden"],
-        icons=["house", "clock", "house-heart", "car-front", "box-arrow-right"], 
+        options=["Startseite", "Ablaufplan", "Unterkunft", "Speisekarte", "Anfahrt", "FAQ", "Abmelden"],
+        icons=["house", "clock", "house-heart", "clipboard2-heart", "car-front", "question-circle", "box-arrow-right"], 
         menu_icon="cast", 
         default_index=0, 
         orientation="horizontal",
@@ -106,8 +106,16 @@ else:
             with open("views/p03_unterkunft.py", encoding="utf-8") as f:
                 exec(f.read())
 
+        elif selected == "Speisekarte":
+            with open("views/p04_speisekarte.py", encoding="utf-8") as f:
+                exec(f.read())
+
         elif selected == "Anfahrt":
             with open("views/p05_ort.py", encoding="utf-8") as f:
+                exec(f.read())
+
+        elif selected == "FAQ":
+            with open("views/p07_faq.py", encoding="utf-8") as f:
                 exec(f.read())
 
         elif selected == "Abmelden":

@@ -1,75 +1,79 @@
 import streamlit as st
+from utils import decrypt_text
+from views.data import ENCRYPTED_CONTENT
 
-
+# 1. Page-spezifisches CSS
 st.markdown(
     """
     <style>
-        body {
-            background-color: #F5F3FF;
-            color: #4A3B5C;
-            font-family: serif;
-        }
-        .title {
-            color: #D1C4E9;
-            font-size: 36px;
-            font-weight: bold;
-            text-align: left;
-        }
         .subtitle {
-            font-size: 24px;
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
             font-weight: bold;
-            color: #6A4CA8;
+            color: #3D2B1F;
             margin-top: 20px;
-            text-align: left;
+            margin-bottom: 20px;
         }
-        .faq-section {
-            font-size: 20px;
-            font-weight: bold;
-            color: #6A4CA8;
-            margin-top: 30px;
+        /* Styling für die Expander (FAQ-Boxen) */
+        .stExpander {
+            background-color: rgba(61, 43, 31, 0.03);
+            border: 1px solid rgba(61, 43, 31, 0.1);
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .stExpander p {
+            color: #3D2B1F;
+            font-size: 17px;
+        }
+        .contact-box {
+            font-size: 18px;
+            color: #3D2B1F;
+            margin-top: 40px;
+            padding: 20px;
+            border: 1px dashed #3D2B1F;
+            border-radius: 10px;
+            text-align: center;
         }
     </style>
     """,
     unsafe_allow_html=True
 )
 
-# Titel
-st.markdown('<h1 class="title">FAQs</h1>', unsafe_allow_html=True)
+# Titel (Nutzt die globale Klasse aus main.py)
+st.markdown('<h1 class="serif-text">FAQs</h1>', unsafe_allow_html=True)
 
-# FAQ
 st.markdown('<h2 class="subtitle">💡 Häufige Fragen</h2>', unsafe_allow_html=True)
 
-# FAQ 1: Geschenke
+# Daten entschlüsseln
+kontakt_person = decrypt_text(ENCRYPTED_CONTENT["name_ansprechpartner"]) # z.B. "Eric Hensel"
+
+# --- FAQ Einträge ---
+
 with st.expander("🎁 Was dürfen wir euch schenken?"):
-    st.write("Wir nehmen gerne Geldgeschenke an, da das eine Tradition in unseren elterlichen Kulturen ist.")
+    st.write("Wir nehmen gerne Geldgeschenke an, da dies eine schöne Tradition in unseren elterlichen Kulturen ist.")
 
-# FAQ 2: Dresscode
 with st.expander("👔 Gibt es einen Dresscode?"):
-    st.write("Werft Euch in tanzbare Schale.")
+    st.write("Werft Euch in tanzbare Schale – wir wollen mit euch feiern und das Parkett glühen lassen!")
 
-# FAQ 3: Getränke
 with st.expander("🍷 Kann ich auch andere Getränke bekommen?"):
-    st.write("Ja, alles außerhalb unserer Getränkekarte kann auf eigene Rechnung an der Bar bestellt werden. "
-             "Kartenzahlung an der Bar ist möglich.")
+    st.write("Ja, alles außerhalb unserer Getränkekarte kann auf eigene Rechnung an der Bar bestellt werden. Kartenzahlung ist vor Ort möglich.")
 
-# FAQ 4: Kinderbetten/Beistellbetten
-with st.expander("🛏️ Gibt es Kinderbetten/Beistellbetten in den Hotelzimmern?"):
-    st.write("Ja, auf Anfrage. Bitte gebt in eurer Buchungsanfrage an, ob und mit wie vielen Kindern ihr anreist.")
+with st.expander("🛏️ Gibt es Kinderbetten im Hotel?"):
+    st.write("Ja, auf Anfrage. Bitte gebt direkt bei eurer Buchungsanfrage im Landhaus an, ob ihr ein Kinder- oder Beistellbett benötigt.")
 
-# FAQ 5: Stillzimmer
-with st.expander("🤱 Gibt es während der Veranstaltung ein Stillzimmer?"):
-    st.write("Ja, hinter dem Bankettraum. Bitte bei Eric Hensel vor Ort anfragen.")
+with st.expander("🤱 Gibt es ein Stillzimmer?"):
+    st.write(f"Ja, ein Raum hinter dem Bankettraum steht zur Verfügung. Bitte wendet euch vor Ort einfach an **{kontakt_person}**.")
 
-# FAQ 6: Wickeltisch
 with st.expander("👶 Wo finden wir einen Wickeltisch?"):
-    st.write("In der Herrentoilette am Bankett. Bitte bei Eric Hensel vor Ort anfragen.")
+    st.write(f"Ein Wickeltisch befindet sich in der Herrentoilette am Bankettbereich. Bei Fragen hilft euch **{kontakt_person}** gerne weiter.")
 
-
+# --- Abschluss Kontakt ---
 st.markdown(
     """
-    <p class="faq-section">
-        ❓ Noch Fragen? Schreibt uns gerne auf WhatsApp oder anderen Messenger Apps!
-    </p>
+    <div class="contact-box">
+        ❓ Noch Fragen offen? <br>
+        Schreibt uns einfach eine Nachricht auf <b>WhatsApp</b> oder ruft uns an!
+    </div>
     """,
     unsafe_allow_html=True
 )
