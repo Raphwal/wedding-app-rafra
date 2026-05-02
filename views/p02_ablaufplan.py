@@ -4,8 +4,8 @@ from views.data import ENCRYPTED_CONTENT
 
 
 # --- (VERSCHLÜSSELT) ---
-kontakt_name = decrypt_text(ENCRYPTED_CONTENT["name_trauzeuge"])
-kontakt_mail = decrypt_text(ENCRYPTED_CONTENT["mail_trauzeuge"])
+kontakt_name = decrypt_text(ENCRYPTED_CONTENT["name_trauzeugin"])
+kontakt_mail = decrypt_text(ENCRYPTED_CONTENT["mail_trauzeugin"])
 date1 = decrypt_text(ENCRYPTED_CONTENT["date1"])
 date2 = decrypt_text(ENCRYPTED_CONTENT["date2"])
 location_name = decrypt_text(ENCRYPTED_CONTENT["location_name"])
