@@ -3,6 +3,12 @@ import pandas as pd
 from utils import decrypt_text
 from views.data import ENCRYPTED_CONTENT
 
+# Einleitung & Buchungsinfos
+hotel_mail = decrypt_text(ENCRYPTED_CONTENT["mail_hotel"])
+hotel_telefon = decrypt_text(ENCRYPTED_CONTENT["tele_hotel"])
+location_name = decrypt_text(ENCRYPTED_CONTENT["location_name"])
+couple_name = decrypt_text(ENCRYPTED_CONTENT["couple_name"])
+
 # 1. Page-spezifisches CSS
 st.markdown(
     """
@@ -41,12 +47,6 @@ st.markdown(
 
 # Titel (Nutzt die globale Klasse aus main.py)
 st.markdown('<h1 class="serif-text">Unterkunft</h1>', unsafe_allow_html=True)
-
-# Einleitung & Buchungsinfos
-hotel_mail = decrypt_text(ENCRYPTED_CONTENT["mail_hotel"])
-hotel_telefon = decrypt_text(ENCRYPTED_CONTENT["tele_hotel"])
-location_name = decrypt_text(ENCRYPTED_CONTENT["location_name"])
-couple_name = decrypt_text(ENCRYPTED_CONTENT["couple_name"])
 
 st.markdown(
     f"""
