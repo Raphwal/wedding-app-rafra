@@ -6,7 +6,7 @@ from utils import load_decrypted_image
 
 # --- (VERSCHLÜSSELT) ---
 kontakt_name = decrypt_text(ENCRYPTED_CONTENT["name_trauzeugin"])
-kontakt_mail = decrypt_text(ENCRYPTED_CONTENT["mail_trauzeugin"])
+kontakt_telefon = decrypt_text(ENCRYPTED_CONTENT["tele_trauzeugin"])
 date1 = decrypt_text(ENCRYPTED_CONTENT["date1"])
 date2 = decrypt_text(ENCRYPTED_CONTENT["date2"])
 location_name = decrypt_text(ENCRYPTED_CONTENT["location_name"])
@@ -59,9 +59,9 @@ events_day1 = [
     (f"Beginn der freien Trauung", "ab 16:30 Uhr"),
     (f"Fotos", "ab 17:00 Uhr"),
     (f"Buffet", "ab 18:30 Uhr"),
-    (f"Torte anschneiden & Dessert", "ca. 20:00 Uhr"),
-    (f"Eröffnung der Tanzfläche", "ab ca. 21:00 Uhr"),
-    (f"Mitternachtssnack", "ab ca. 23:30 Uhr")
+    (f"Torte anschneiden & Dessert", "gegen 20:00 Uhr"),
+    (f"Eröffnung der Tanzfläche", "gegen 21:00 Uhr"),
+    (f"Mitternachtssnack", "gegen 23:30 Uhr")
 ]
 
 for event, time in events_day1:
@@ -70,24 +70,23 @@ for event, time in events_day1:
 st.divider()
 
 # --- Day 2 ---
-st.markdown(f'<h2 class="subtitle">Samstag, <b>{date2}</b> </h2>', unsafe_allow_html=True)
+#st.markdown(f'<h2 class="subtitle">Samstag, <b>{date2}</b> </h2>', unsafe_allow_html=True)
 
-events_day2 = [
-    (f"Frühstück im {location_name} Restaurant (für alle die wollen) - bitte Info geben", "09:00 bis 10:30 Uhr"),
-    (f"Check-Out", "bis 11:00 Uhr")
-]
+#events_day2 = [
+#    (f"Frühstück im {location_name} Restaurant (für alle die wollen) - bitte Info geben", "09:00 bis 10:30 Uhr"),
+#    (f"Check-Out", "bis 11:00 Uhr")
+#]
 
-for event, time in events_day2:
-    st.markdown(f'<div class="event"><b>{time}</b>: {event}</div>', unsafe_allow_html=True)
+#for event, time in events_day2:
+#    st.markdown(f'<div class="event"><b>{time}</b>: {event}</div>', unsafe_allow_html=True)
 
-st.divider()
+#st.divider()
 
 # --- Kontakt-Box ---
 st.markdown(
     f"""
     <div class="contact-box">
         💡 Möchtet ihr einen Programmpunkt beisteuern? <br>
-        Meldet euch gerne bei <b>{kontakt_name}</b> unter: 
-        <a href="mailto:{kontakt_mail}" style="color: #3D2B1F;">{kontakt_mail}</a>
+        Meldet euch gerne bei <b>{kontakt_name}</b> oder  unter {kontakt_telefon}
     </div>
     """, unsafe_allow_html=True)

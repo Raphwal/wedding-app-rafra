@@ -83,7 +83,7 @@ st.markdown(
     """
     <ul class="text">
         <li> Mit der <b>S2</b> könnt ihr bis zum S Bahnhof Buch fahren. </li>
-        <li> Dann nochmal ca. 10-12 Minuten – je nach Schritttempo laufen.</li>
+        <li> Dann nochmal ca. 10-12 Minuten – je nach Schritttempo – laufen.</li>
     </ul>
 
     """,
@@ -96,7 +96,7 @@ st.markdown('<h2 class="subtitle">🚗 Anfahrt mit dem Auto</h2>', unsafe_allow_
 st.markdown(
     """
     <p class="text">
-        Es gibt mehr als genug Parkplätze direkt vor der Lokation. Schaut euch das genau auf dem Lageplan an.
+        Es gibt mehr als genug Parkplätze direkt vor der Location. Schaut euch das genau auf dem Lageplan an.
     </p>
     """,
     unsafe_allow_html=True
