@@ -8,39 +8,57 @@ adresse_location = decrypt_text(ENCRYPTED_CONTENT["adresse_location"])
 
 st.markdown(
     """
-    <style>
-        body {
-            background-color: #F5F3FF;
-            color: #4A3B5C;
-            font-family: serif;
-        }
+<style>
+        /* 1. Titel & Überschriften im neuen Blau */
         .title {
-            color: #D1C4E9;
+            font-family: 'Playfair Display', serif;
+            color: #2E4053;
             font-size: 36px;
             font-weight: bold;
             text-align: left;
+            margin-bottom: 10px;
         }
+        
         .subtitle {
-            font-size: 24px;
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
             font-weight: bold;
-            color: #6A4CA8;
-            margin-top: 20px;
+            color: #2E4053;
+            margin-top: 25px;
             text-align: left;
         }
+
+        /* 2. Fließtext */
         .text {
             font-size: 18px;
+            color: #2E4053;
             text-align: left;
+            line-height: 1.6;
             margin-bottom: 20px;
+            /* Optional: Leichter weißer Hintergrund für bessere Lesbarkeit über Blumen */
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 8px;
         }
-        .contact {
-            font-size: 20px;
-            font-weight: bold;
-            color: #4A3B5C;
-            text-align: left;
+
+        /* 3. Die Kontakt-Box (Dashed Design passend zum Rest) */
+        .contact-box {
+            font-size: 18px;
+            color: #2E4053;
+            text-align: center;
             margin-top: 30px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.6);
+            border: 2px dashed #2E4053;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(46, 64, 83, 0.1);
         }
+
+        /* 4. iFrames (z.B. Google Forms oder Maps) */
         iframe {
-            border-radius: 10px;
+            border: 2px solid #2E4053 !important;
+            border-radius: 15px !important;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
     </style>
     """,

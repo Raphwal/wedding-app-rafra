@@ -14,33 +14,43 @@ forms_url = decrypt_text(ENCRYPTED_CONTENT["forms_url"])
 st.markdown(
     """
     <style>
+        /* 1. Untertitel in Schieferblau */
         .subtitle {
             font-family: 'Playfair Display', serif;
             font-size: 28px;
             font-weight: bold;
-            color: #3D2B1F;
+            color: #2E4053;
             margin-top: 20px;
             margin-bottom: 20px;
         }
-        /* Styling für die Expander (FAQ-Boxen) */
+
+        /* 2. Styling für die Expander (FAQ-Boxen) */
+        /* Wir nutzen ein helles Weiß-Blau, damit sie über den Blumen schweben */
         .stExpander {
-            background-color: rgba(61, 43, 31, 0.03);
-            border: 1px solid rgba(61, 43, 31, 0.1);
+            background-color: rgba(255, 255, 255, 0.4); 
+            border: 1px solid rgba(46, 64, 83, 0.1);
             margin-bottom: 10px;
-            border-radius: 5px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
         }
+
+        /* Text innerhalb der Expander */
         .stExpander p {
-            color: #3D2B1F;
+            color: #2E4053;
             font-size: 17px;
         }
+
+        /* 3. Die Kontakt-Box (Dashed & Clean) */
         .contact-box {
             font-size: 18px;
-            color: #3D2B1F;
+            color: #2E4053;
             margin-top: 40px;
-            padding: 20px;
-            border: 1px dashed #3D2B1F;
-            border-radius: 10px;
+            padding: 25px;
+            background-color: rgba(255, 255, 255, 0.6);
+            border: 2px dashed #2E4053;
+            border-radius: 15px;
             text-align: center;
+            box-shadow: 0 4px 12px rgba(46, 64, 83, 0.1);
         }
     </style>
     """,

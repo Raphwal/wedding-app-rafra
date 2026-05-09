@@ -22,26 +22,29 @@ st.markdown(
             font-family: 'Playfair Display', serif;
             font-size: 28px;
             font-weight: bold;
-            color: #3D2B1F; /* Dunkelbraun wie im Bild */
-            margin-top: 20px;
+            color: #2E4053;
+            margin-top: 25px;
         }
         .event {
             font-size: 18px;
-            margin: 10px 0;
+            margin: 12px 0;
             padding: 15px;
-            background-color: rgba(61, 43, 31, 0.05); /* Sehr dezentes Braun */
-            border-left: 5px solid #3D2B1F; /* Brauner Akzent-Balken */
-            border-radius: 5px;
-            color: #3D2B1F;
+            background-color: rgba(255, 255, 255, 0.3); /* Etwas heller für bessere Lesbarkeit */
+            border-left: 5px solid #2E4053;
+            border-radius: 8px;
+            color: #2E4053;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
         }
         .contact-box {
             font-size: 18px;
-            color: #3D2B1F;
+            color: #2E4053;
             margin-top: 30px;
-            padding: 15px;
-            border: 1px dashed #3D2B1F;
-            border-radius: 10px;
+            padding: 25px;
+            background-color: rgba(255, 255, 255, 0.6); 
+            border: 2px dashed #2E4053;
+            border-radius: 15px;
             text-align: center;
+            box-shadow: 0 4px 12px rgba(46, 64, 83, 0.1);
         }
     </style>
     """,

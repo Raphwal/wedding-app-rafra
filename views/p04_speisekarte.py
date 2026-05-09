@@ -8,41 +8,41 @@ st.markdown(
     <style>
         .subtitle {
             font-family: 'Playfair Display', serif;
-            font-size: 30px;
+            font-size: 28px;
             font-weight: bold;
-            color: #3D2B1F;
-            margin-top: 35px;
-            border-bottom: 1px solid #3D2B1F;
-            padding-bottom: 5px;
+            color: #2E4053;
+            margin-top: 25px;
         }
         .menu-section {
             font-family: 'Playfair Display', serif;
             font-size: 22px;
             font-weight: bold;
-            color: #3D2B1F;
+            color: #2E4053;
             margin-top: 25px;
             margin-bottom: 10px;
             font-style: italic;
         }
         .info-text {
             font-size: 18px;
-            color: #3D2B1F;
+            color: #2E4053;
             font-style: italic;
             text-align: center;
             padding: 10px;
         }
         .contact-box {
             font-size: 18px;
-            color: #3D2B1F;
+            color: #2E4053;
             margin-top: 30px;
-            padding: 20px;
-            border: 1px dashed #3D2B1F;
-            border-radius: 10px;
+            padding: 25px;
+            background-color: rgba(255, 255, 255, 0.6); 
+            border: 2px dashed #2E4053;
+            border-radius: 15px;
             text-align: center;
+            box-shadow: 0 4px 12px rgba(46, 64, 83, 0.1);
         }
         /* Styling für die Markdown-Listen */
         .stMarkdown ul {
-            color: #3D2B1F;
+            color: #2E4053;
             font-size: 18px;
             list-style-type: "◦ ";
         }

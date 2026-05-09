@@ -13,34 +13,31 @@ st.markdown("""
 
         /* 2. Basis-Hintergrund (Nur Farbe als Fallback) */
         .stApp {
-            background-color: #EEDC9A;
-            /* Der background-image Teil wurde entfernt, 
-               da dies jetzt von set_encrypted_bg übernommen wird */
+            background-color: #D6EAF8;
         }
 
         /* 3. Styling für die Schriften (bleibt gleich) */
         .serif-text {
             font-family: 'Playfair Display', serif;
-            color: #3D2B1F;
+            color: #2E4053; 
             font-size: 32px;
             text-align: center;
-            line-height: 1.4;
-            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8); /* Heller Schatten für bessere Lesbarkeit */
         }
 
+        /* Weißer Text (Untertitel) - Bleibt weiß, bekommt aber blauen Schatten */
         .sans-white-text {
             font-family: 'Montserrat', sans-serif;
             color: #FFFFFF;
             font-size: 18px;
             text-align: center;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.6); /* Schatten etwas verstärkt für Lesbarkeit */
-            line-height: 1.2;
+            text-shadow: 1px 1px 4px rgba(46, 64, 83, 0.4); 
         }
         
         /* Optional: Macht die Boxen der App (Widgets) leicht transparent, 
            damit man das Hintergrundbild durchschimmern sieht */
         [data-testid="stVerticalBlock"] > div {
-            background-color: rgba(238, 220, 154, 0.1); 
+            background-color: rgba(255, 255, 255, 0.6); 
             border-radius: 10px;
         }
     </style>
@@ -76,21 +73,17 @@ else:
         default_index=0, 
         orientation="horizontal",
         styles={
-            "container": {"padding": "0!important", "background-color": "#D4C285", "border-radius": "0px"},
-            "icon": {"color": "#3D2B1F", "font-size": "18px"}, 
-            "nav-link": {
-                "font-family": "'Montserrat', sans-serif",
-                "font-size": "14px", 
-                "text-align": "center", 
-                "margin":"0px", 
-                "color": "#3D2B1F",
-                "--hover-color": "#EEDC9A"
-            },
-            "nav-link-selected": {"background-color": "#3D2B1F", "color": "#EEDC9A"},
+        "container": {"padding": "0!important", "background-color": "#EBF5FB", "border-radius": "0px"},
+        "icon": {"color": "#5D6D7E", "font-size": "18px"}, 
+        "nav-link": {
+            "color": "#2E4053",
+            "--hover-color": "#D6EAF8"
+        },
+        "nav-link-selected": {"background-color": "#5D6D7E", "color": "#FFFFFF"},
         }
-    )
+        )
     # horizontale Linie unter der Navigation
-    st.markdown('<hr style="border: 0; height: 1px; background: #3D2B1F; margin-top: 0;">', unsafe_allow_html=True)
+    st.markdown('<hr style="border: 0; height: 1px; background: #2E4053; margin-top: 0;">', unsafe_allow_html=True)
 
     # 4. Routing: Welche Seite soll angezeigt werden?
     with st.container():

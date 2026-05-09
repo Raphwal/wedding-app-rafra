@@ -23,27 +23,28 @@ st.markdown(
             font-family: 'Playfair Display', serif;
             font-size: 28px;
             font-weight: bold;
-            color: #3D2B1F;
-            margin-top: 30px;
-            margin-bottom: 10px;
+            color: #2E4053;
+            margin-top: 25px;
         }
         .info-text {
             font-size: 18px;
-            color: #3D2B1F;
+            color: #2E4053;
             line-height: 1.6;
         }
         .contact-box {
             font-size: 18px;
-            color: #3D2B1F;
+            color: #2E4053;
             margin-top: 30px;
-            padding: 20px;
-            border: 1px dashed #3D2B1F;
-            border-radius: 10px;
+            padding: 25px;
+            background-color: rgba(255, 255, 255, 0.6); 
+            border: 2px dashed #2E4053;
+            border-radius: 15px;
             text-align: center;
+            box-shadow: 0 4px 12px rgba(46, 64, 83, 0.1);
         }
         /* Styling für die Tabelle anpassen */
         .stDataFrame {
-            border: 1px solid #3D2B1F;
+            border: 1px solid #2E4053;
             border-radius: 5px;
         }
     </style>
@@ -60,24 +61,22 @@ st.markdown(
         Direkt am <b>{location_name}</b> befindet sich das {location_name} Hotel. Dieses hat jeweils 8 Economy und 10 Doppelzimmer, 
         die jeweils ein Doppelbett innehaben. Das Hotel ist leider nicht barrierefrei. Haustiere sind nicht erlaubt. 
         Weitere Informationen zu den Zimmern und zum Hotel findet ihr unter 
-        <a href="{link_location}" target="_blank" style="color: #3D2B1F; font-weight: bold;">{link_location}</a>.<br>
+        <a href="{link_location}" target="_blank" style="color: #2E4053; font-weight: bold;">{link_location}</a>.<br>
         Zimmerreservierungen sind voraussichtlich ab <b>Ende Juni 2026</b> möglich. Wenn ihr ein Zimmer reservieren möchtet, 
         meldet euch bitte direkt beim Stadtgut Hotel und schreibt eine Mail an 
-        <b><a href="mailto:{hotel_mail}" style="color: #3D2B1F; font-weight: bold;">{hotel_mail}</a></b>
+        <b><a href="mailto:{hotel_mail}" style="color: #2E4053; font-weight: bold;">{hotel_mail}</a></b>
         mit dem Betreff „Hotelzimmerbuchung Hochzeit {couple_name}“ und der Angabe von Namen, Anschrift und Geburtsdaten.
         <br>
         Hierbei gilt: Nur so lange der Vorrat reicht! <br>
         Telefonisch erreicht ihr die Rezeption zwischen 9:00 Uhr und 18:00 Uhr unter der <b>{hotel_telefon}</b>.<br>
+        🐣 Ein Babybett kann für 10 EUR pro Nacht dazugebucht werden. Gebt das einfach bei der Buchung mit an.<br>
         <br>
         Weiterhin sind mit einer ca. 10-minütigen Autofahrt auch folgende Hotels gut erreichbar: <br>
         o  {hotel_name2}<br>
         o  {hotel_name3}<br>
         o  {hotel_name4}<br>
         o  {hotel_name5}<br>
-        o  {hotel_name6}<br>
-
-        
-        🐣 Ein Babybett kann für 10 EUR pro Nacht dazugebucht werden. Gebt das einfach bei der Buchung mit an. 
+        o  {hotel_name6}<br>   
     </div>
     """,
     unsafe_allow_html=True

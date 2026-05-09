@@ -47,16 +47,7 @@ def set_encrypted_bg(bin_file):
                 background-attachment: fixed;
             }}
             
-            /* Optional: Ein leichter Overlay, damit der Text besser lesbar ist */
-            .stApp::before {{
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(238, 220, 154, 0.4); /* Dein Beige mit 40% Transparenz */
-                z-index: -1;
+
             }}
             </style>
             """,

@@ -39,7 +39,7 @@ components.html(f"""
             position: relative;
             width: 100%;
             height: 0;
-            padding-bottom: 160%; /* Etwas mehr Platz für das Formular */
+            padding-bottom: 120%; /* Etwas mehr Platz für das Formular */
             overflow: hidden;
             background-color: transparent;
         }}
@@ -49,11 +49,11 @@ components.html(f"""
             left: 0;
             width: 100%;
             height: 100%;
-            /* Rahmenfarbe auf dein Dunkelbraun angepasst */
-            border: 2px solid #3D2B1F; 
+            /* Rahmenfarbe */
+            border: 2px solid #2E4053; 
             border-radius: 15px;
-            /* Ein weicher Schatten lässt das Formular auf dem Papier "liegen" */
-            box-shadow: 0 4px 12px rgba(61, 43, 31, 0.15);
+            
+         
         }}
     </style>
 
