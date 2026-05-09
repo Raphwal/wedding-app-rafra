@@ -8,58 +8,83 @@ st.set_page_config(layout="wide", initial_sidebar_state="collapsed")
 # CSS für Hintergrund-Textur, Schriftarten und Text-Schatten
 st.markdown("""
     <style>
-        /* 1. Schriften importieren */
+        /* 1. Schriften & allgemeines Layout */
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@700&display=swap');
 
-        /* 2. Basis-Hintergrund (Nur Farbe als Fallback) */
         .stApp {
             background-color: #D6EAF8;
         }
 
-        /* 3. Styling für die Schriften (bleibt gleich) */
+        /* 2. Der allgemeine weiße Kasten für TEXT-Elemente */
+        [data-testid="stVerticalBlock"] > div {
+            background-color: rgba(255, 255, 255, 0.15); 
+            border-radius: 15px;
+            padding: 20px !important;
+            margin-bottom: 10px !important;
+        }
+            
+        /* NEU: Diese Regel entfernt die "Geister-Boxen" am Anfang der Seite */
+        div[data-testid="stVerticalBlock"] > div:has(style), 
+        div[data-testid="stVerticalBlock"] > div:empty {
+            background-color: transparent !important;
+            padding: 0px !important;
+            margin: 0px !important;
+            box-shadow: none !important;
+        }    
+        
+        /* 3. AUSNAHME FÜR BILDER: Entfernt den weißen Kasten & die Ränder */
+        /* Wir suchen Container, die ein Bild enthalten, und machen sie unsichtbar */
+        div[data-testid="stVerticalBlock"] > div:has(div[data-testid="stImage"]) {
+            background-color: transparent !important;
+            padding: 0px !important;
+            box-shadow: none !important;
+        }
+
+        /* 4. BILD-STYLING (Zentrierung & Desktop-Größe) */
+        [data-testid="stImage"] {
+            display: flex;
+            justify-content: center; /* Zentriert den Bild-Container */
+        }
+
+        [data-testid="stImage"] img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 15px; /* Schöne abgerundete Ecken direkt am Bild */
+            box-shadow: 0 4px 15px rgba(46, 64, 83, 0.2); /* Eleganter Schatten */
+        }
+
+        /* Desktop-Beschränkung */
+        @media (min-width: 1024px) {
+            [data-testid="stImage"] img {
+                max-width: 800px !important; /* Hier stellst du die Desktop-Breite ein */
+                width: auto !important;
+            }
+        }
+
+        /* Mobile-Ansicht (Handy) */
+        @media (max-width: 1023px) {
+            [data-testid="stImage"] img {
+                width: 100% !important; /* Auf dem Handy volle Breite nutzen */
+            }
+        }
+
+        /* 5. TEXT-SCHATTEN (Korrektur gegen das Verrutschen) */
         .serif-text {
             font-family: 'Playfair Display', serif;
             color: #2E4053; 
             font-size: 32px;
             text-align: center;
-            /* 0px 0px sorgt dafür, dass der Schatten genau mittig hinter dem Buchstaben sitzt */
-            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9), 
-                         0px 0px 5px rgba(255, 255, 255, 0.6);
-            line-height: 1.4;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9), 0px 0px 5px rgba(255, 255, 255, 0.6);
         }
 
-        /* Weißer Text (Untertitel) - Bleibt weiß, bekommt aber blauen Schatten */
         .sans-white-text {
             font-family: 'Montserrat', sans-serif;
             color: #FFFFFF;
             font-size: 18px;
             text-align: center;
-            /* Ein dunklerer Kranz um die weiße Schrift verhindert das "Verrutschen" */
-            text-shadow: 0px 0px 8px rgba(46, 64, 83, 0.6),
-                         0px 0px 4px rgba(46, 64, 83, 0.3);
-            line-height: 1.2;
+            text-shadow: 0px 0px 8px rgba(46, 64, 83, 0.6); 
         }
-        
-        /* Optional: Macht die Boxen der App (Widgets) leicht transparent, 
-           damit man das Hintergrundbild durchschimmern sieht */
-        [data-testid="stVerticalBlock"] > div {
-            background-color: rgba(255, 255, 255, 0.15); 
-            border-radius: 15px;
-            padding: 20px !important; /* Gibt dem Text Platz zum Rand */
-            margin-bottom: 10px !important;
-        
-        /* Bilder-Begrenzung für Desktop */
-        @media (min-width: 1024px) {
-            [data-testid="stImage"] img {
-                max-width: 800px !important; /* Hier kannst du die maximale Breite auf dem Desktop einstellen */
-                margin-left: auto;
-                margin-right: auto;
-                display: block;
-                border-radius: 15px; /* Passt zum restlichen Design */
-                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            }
-        }
-            }
     </style>
 """, unsafe_allow_html=True)
 
