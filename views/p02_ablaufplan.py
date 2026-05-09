@@ -12,7 +12,7 @@ date2 = decrypt_text(ENCRYPTED_CONTENT["date2"])
 location_name = decrypt_text(ENCRYPTED_CONTENT["location_name"])
 
 img_data = load_decrypted_image("assets/Ablaufplan.bin")
-st.image(img_data, caption="Foto von der Glücksburg")
+st.image(img_data, caption="Foto von der Glücksburg", use_container_width=True)
 
 # 1. Page-spezifisches CSS (Nur für das Layout der Boxen)
 st.markdown(

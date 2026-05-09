@@ -2,6 +2,7 @@ import streamlit as st
 from cryptography.fernet import Fernet
 import io
 import base64
+from PIL import Image
 
 def get_cipher():
     """Initialisiert den Cipher mit dem Key aus den Secrets."""
@@ -55,3 +56,27 @@ def set_encrypted_bg(bin_file):
         )
     except Exception as e:
         st.error(f"Hintergrund konnte nicht geladen werden: {e}")
+
+
+def crop_image_top_bottom(image_data, top_percent, bottom_percent):
+    """
+    Schneidet ein Bild oben und unten um den angegebenen Prozentsatz zu.
+    image_data: BytesIO Objekt (aus deiner Entschlüsselung)
+    """
+    img = Image.open(image_data)
+    width, height = img.size
+    
+    # Berechne die Pixel-Koordinaten
+    # (left, top, right, bottom)
+    left = 0
+    right = width
+    top = height * (top_percent / 100)
+    bottom = height * (1 - (bottom_percent / 100))
+    
+    # Der eigentliche Schnitt
+    cropped_img = img.crop((left, top, right, bottom))
+    
+    # Wieder in einen Stream speichern, damit st.image es versteht
+    buffer = io.BytesIO()
+    cropped_img.save(buffer, format="JPEG")
+    return buffer

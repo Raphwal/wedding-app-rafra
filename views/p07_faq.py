@@ -1,5 +1,5 @@
 import streamlit as st
-from utils import load_decrypted_image, decrypt_text
+from utils import load_decrypted_image, decrypt_text, crop_image_top_bottom
 from views.data import ENCRYPTED_CONTENT
 
 # Daten entschlüsseln
@@ -8,6 +8,11 @@ tele_trauzeugin = decrypt_text(ENCRYPTED_CONTENT["tele_trauzeugin"])
 kontakt_name_m = decrypt_text(ENCRYPTED_CONTENT["name_trauzeuge"])
 tele_trauzeuge = decrypt_text(ENCRYPTED_CONTENT["tele_trauzeuge"])
 forms_url = decrypt_text(ENCRYPTED_CONTENT["forms_url"])
+
+img_data1 = load_decrypted_image("assets/cat.bin")
+img_data2 = load_decrypted_image("assets/herz.bin")
+
+img_data1 = crop_image_top_bottom(img_data1, top_percent=35, bottom_percent=15)
 
 
 # 1. Page-spezifisches CSS
@@ -85,8 +90,7 @@ with st.expander("🛏️ Gibt es Kinderbetten im Hotel?"):
 with st.expander("🐶 Dürfen Haustiere mitgebracht werden?"):
     st.write("Vierbeinige Gäste (auch Achtbeinige) müssen leider draußen bleiben. Das gilt leider auch für Filou, der sicherlich auch wahnsinnig gern in der Menschenmenge verschwunden wäre. " \
     "Wir hoffen ein paar extra Leckerlis können die Situation lösen und bitten um euer Verständnis.  ")
-    img_data = load_decrypted_image("assets/cat.bin")
-    st.image(img_data, caption="Echt jetzt?")
+    st.image(img_data1, caption="Echt jetzt?", use_container_width=True)
 with st.expander("🎶 Können wir uns auch Songs wünschen? "):
     st.markdown(f"""Ihr habt einen Lieblingssong, der unbedingt auf die Tanzfläche muss? Sehr gern! Tragt eure Musikwünsche einfach im [Google Formular]({forms_url}) ein. 
                 (Es gibt keine Garantie, dass alle Wünsche erfüllt werden können, aber wir geben unser Bestes 😉)
@@ -103,8 +107,7 @@ with st.expander("👯 Wie groß wird die Feier sein?"):
 st.markdown('<h3 class="subtitle">Während der Hochzeit</h3>', unsafe_allow_html=True)
 with st.expander("⛈️ Was passiert bei schlechtem Wetter?"):
     st.write("Keine Sorge, es muss niemand im Regen stehen, es gibt einen trockenen Plan B.")
-    img_data = load_decrypted_image("assets/herz.bin")
-    st.image(img_data, caption="Wir machen das beste draus!")
+    st.image(img_data2, caption="Wir machen das beste draus!", use_container_width=True)
 
 with st.expander("🎊 Dürfen Blumen/Konfetti oder ähnliches gestreut werden?"):
     st.write("Bitte nicht! Sowohl das streuen von Blüten, Konfetti als auch Reis im Innen- und Außenbereich sind nicht erlaubt und wird für uns teuer. ")

@@ -13,7 +13,7 @@ location_name = decrypt_text(ENCRYPTED_CONTENT["location_name"])
 
 # picture
 img_data = load_decrypted_image("assets/Hochzeit_teaser.bin")
-st.image(img_data, caption="Foto aus Straßburg")
+st.image(img_data, caption="Foto aus Straßburg", use_container_width=True)
 
 st.markdown(f"""
 ## Liebe Gäste,

@@ -22,7 +22,10 @@ st.markdown("""
             color: #2E4053; 
             font-size: 32px;
             text-align: center;
-            text-shadow: 1px 1px 2px rgba(255,255,255,0.8); /* Heller Schatten für bessere Lesbarkeit */
+            /* 0px 0px sorgt dafür, dass der Schatten genau mittig hinter dem Buchstaben sitzt */
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9), 
+                         0px 0px 5px rgba(255, 255, 255, 0.6);
+            line-height: 1.4;
         }
 
         /* Weißer Text (Untertitel) - Bleibt weiß, bekommt aber blauen Schatten */
@@ -31,15 +34,32 @@ st.markdown("""
             color: #FFFFFF;
             font-size: 18px;
             text-align: center;
-            text-shadow: 1px 1px 4px rgba(46, 64, 83, 0.4); 
+            /* Ein dunklerer Kranz um die weiße Schrift verhindert das "Verrutschen" */
+            text-shadow: 0px 0px 8px rgba(46, 64, 83, 0.6),
+                         0px 0px 4px rgba(46, 64, 83, 0.3);
+            line-height: 1.2;
         }
         
         /* Optional: Macht die Boxen der App (Widgets) leicht transparent, 
            damit man das Hintergrundbild durchschimmern sieht */
         [data-testid="stVerticalBlock"] > div {
-            background-color: rgba(255, 255, 255, 0.6); 
-            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.15); 
+            border-radius: 15px;
+            padding: 20px !important; /* Gibt dem Text Platz zum Rand */
+            margin-bottom: 10px !important;
+        
+        /* Bilder-Begrenzung für Desktop */
+        @media (min-width: 1024px) {
+            [data-testid="stImage"] img {
+                max-width: 800px !important; /* Hier kannst du die maximale Breite auf dem Desktop einstellen */
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+                border-radius: 15px; /* Passt zum restlichen Design */
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
         }
+            }
     </style>
 """, unsafe_allow_html=True)
 
