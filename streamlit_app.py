@@ -19,8 +19,38 @@ st.markdown("""
         [data-testid="stVerticalBlock"] > div {
             background-color: rgba(255, 255, 255, 0.15); 
             border-radius: 15px;
-            padding: 20px !important;
+            padding: 20px !important; /* Standard für Desktop */
             margin-bottom: 10px !important;
+            box-sizing: border-box !important;
+            max-width: 100% !important;
+            
+            /* NEU: Sorgt dafür, dass Wörter umbrechen und nicht rausschieben */
+            overflow-wrap: break-word !important;
+            word-wrap: break-word !important;
+            word-break: break-word !important;
+            hyphens: auto !important;
+        }
+
+        /* SPEZIAL-ANPASSUNG FÜR MOBILGERÄTE (Handys) */
+        @media (max-width: 768px) {
+            [data-testid="stVerticalBlock"] > div {
+                padding: 12px !important; /* Weniger Padding auf dem Handy gibt dem Text mehr Platz */
+            }
+            
+            /* Verhindert, dass Streamlit auf dem Handy zu viel Rand links/rechts lässt */
+            .main .block-container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            .serif-text {
+                font-size: 26px !important; /* Titel etwas kleiner auf dem Handy */
+            }
+        }
+        /* Spezial-Korrektur für Formulare und Eingabefelder, damit sie nicht wandern */
+        [data-testid="stForm"], .stTextInput, .stButton {
+            width: 100% !important;
+            box-sizing: border-box !important;
         }
             
         /* NEU: Diese Regel entfernt die "Geister-Boxen" am Anfang der Seite */

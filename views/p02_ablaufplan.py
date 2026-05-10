@@ -76,7 +76,7 @@ st.divider()
 st.markdown(f'<h2 class="subtitle">Samstag, <b>{date2}</b> </h2>', unsafe_allow_html=True)
 
 events_day2 = [
-    (f"Frühstück im {location_name} Restaurant (für alle die wollen) - bitte Info geben", "08:00 bis 09:45 Uhr"),
+    (f"Frühstück im {location_name} Restaurant (für alle die wollen) - bitte im Rückmeldeformular angeben", "08:00 bis 09:45 Uhr"),
     (f"Check-Out", "bis 10:00 Uhr")
 ]
 
@@ -90,6 +90,6 @@ st.markdown(
     f"""
     <div class="contact-box">
         💡 Möchtet ihr einen Programmpunkt beisteuern? <br>
-        Meldet euch gerne bei <b>{kontakt_name}</b> unter {kontakt_telefon}.
+         Bitte wendet euch an unsere kompetenten Trauzeugen <b>{kontakt_name_f}</b> unter der <b>{tele_trauzeugin}</b> oder <b>{kontakt_name_m}</b> unter <b>{tele_trauzeuge}</b>.
     </div>
     """, unsafe_allow_html=True)

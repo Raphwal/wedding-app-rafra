@@ -58,25 +58,25 @@ st.markdown('<h1 class="serif-text">Unterkunft</h1>', unsafe_allow_html=True)
 st.markdown(
     f"""
     <div class="info-text">
-        Direkt am <b>{location_name}</b> befindet sich das {location_name} Hotel. Dieses hat jeweils 8 Economy und 10 Doppelzimmer, 
-        die jeweils ein Doppelbett innehaben. Das Hotel ist leider nicht barrierefrei. Haustiere sind nicht erlaubt. 
+        Direkt am <b>{location_name}</b> befindet sich das {location_name} Hotel. Dieses hat 18 Zimmer, die jeweils ein Doppelbett innehaben. 
+        Das Hotel ist leider nicht barrierefrei. Haustiere sind nicht erlaubt. 
         Weitere Informationen zu den Zimmern und zum Hotel findet ihr unter 
         <a href="{link_location}" target="_blank" style="color: #2E4053; font-weight: bold;">{link_location}</a>.<br>
         Zimmerreservierungen sind voraussichtlich ab <b>Ende Juni 2026</b> möglich. Wenn ihr ein Zimmer reservieren möchtet, 
         meldet euch bitte direkt beim Stadtgut Hotel und schreibt eine Mail an 
         <b><a href="mailto:{hotel_mail}" style="color: #2E4053; font-weight: bold;">{hotel_mail}</a></b>
         mit dem Betreff „Hotelzimmerbuchung Hochzeit {couple_name}“ und der Angabe von Namen, Anschrift und Geburtsdaten.
+        Die Buchung der Hotelzimmer erfolgt auf eigene Kosten, das Kontigent wird aktuell nur geblockt. <br>
         <br>
-        Hierbei gilt: Nur so lange der Vorrat reicht! <br>
         Telefonisch erreicht ihr die Rezeption zwischen 9:00 Uhr und 18:00 Uhr unter der <b>{hotel_telefon}</b>.<br>
         🐣 Ein Babybett kann für 10 EUR pro Nacht dazugebucht werden. Gebt das einfach bei der Buchung mit an.<br>
         <br>
         Weiterhin sind mit einer ca. 10-minütigen Autofahrt auch folgende Hotels gut erreichbar: <br>
-        o  {hotel_name2}<br>
-        o  {hotel_name3}<br>
-        o  {hotel_name4}<br>
-        o  {hotel_name5}<br>
-        o  {hotel_name6}<br>   
+        -- >  {hotel_name2}<br>
+        -- > {hotel_name3}<br>
+        -- > {hotel_name4}<br>
+        -- > {hotel_name5}<br>
+        -- > {hotel_name6}<br>   
     </div>
     """,
     unsafe_allow_html=True

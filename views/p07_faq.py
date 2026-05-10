@@ -98,7 +98,7 @@ with st.expander("🎶 Können wir uns auch Songs wünschen? "):
 
 with st.expander("🎲 Sind Spiele und Aktionen erlaubt?"):
     st.write("Wenn ihr eine Überraschung, ein Spiel oder eine kleine Aktion für die Hochzeit plant stimmt euch bitte einmal kurz mit unseren " \
-    f"Trauzeugen **{kontakt_name_m}** oder **{kontakt_name_f}** ab, damit alles gut zusammenpasst und niemand doppelt organisiert. ")
+    f"Trauzeugen **{kontakt_name_m}** ({tele_trauzeuge}) oder **{kontakt_name_f}** ({tele_trauzeugin}) ab, damit alles gut zusammenpasst und niemand doppelt organisiert. ")
 
 with st.expander("👯 Wie groß wird die Feier sein?"):
     st.write("Wir planen mit ca. 60 Personen.")
@@ -110,11 +110,11 @@ with st.expander("⛈️ Was passiert bei schlechtem Wetter?"):
     st.image(img_data2, caption="Wir machen das beste draus!", use_container_width=True)
 
 with st.expander("🎊 Dürfen Blumen/Konfetti oder ähnliches gestreut werden?"):
-    st.write("Bitte nicht! Sowohl das streuen von Blüten, Konfetti als auch Reis im Innen- und Außenbereich sind nicht erlaubt und wird für uns teuer. ")
+    st.write("Bitte nicht! Sowohl das Streuen von Blüten, Konfetti als auch Reis im Innen- und Außenbereich sind nicht erlaubt und wird für uns teuer. ")
 
 with st.expander("📸 Können wir Fotos hochladen? "):
-    st.write("Ihr könnt eure Fotos, die ihr während der Hochzeit oder auch in Vorbereitung zur Hochzeit macht und gern auf Everlense hochladen. " \
-    "Den Link hierzu laden wir ca. zwei Monate vor der Hochzeit auf die Seite. ")
+    st.write("Ihr könnt eure Fotos, die ihr während der Hochzeit oder auch in Vorbereitung zur Hochzeit macht gern auf Everlense hochladen. " \
+    " Den Link zu Everlense findet ihr ca. 2 Monate vor der Hochzeit auf der Seite. ")
 
 #with st.expander("🤱 Gibt es ein Stillzimmer?"):
 #    st.write(f"+Ja, ein Raum hinter dem Bankettraum steht zur Verfügung. Bitte wendet euch vor Ort einfach an **{kontakt_name_m}**.")

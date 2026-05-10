@@ -18,8 +18,9 @@ st.image(img_data, caption="Foto aus Straßburg", use_container_width=True)
 st.markdown(f"""
 ## Liebe Gäste,
 wir freuen uns, am **{date1}** mit euch im {location_name} ({link_location}) unsere Hochzeit zu feiern!
-Alle wichtigen Informationen haben wir hier zusammengestellt. Damit auch wir die beste Feier für euch planen können, bitten wir euch bis spätestens zum **31.12.2026** eure Rückmeldungen über folgendes [Google Formular]({forms_url}) zu geben.
-Wir haben das Formular auch für euch eingebettet.
+Alle wichtigen Informationen haben wir hier zusammengestellt. <br>
+Damit auch wir die beste Feier für euch planen können, bitten wir euch bis spätestens zum **31.12.2026** eure Rückmeldungen über folgendes [Google Formular]({forms_url}) zu geben.<br>
+Wir haben das Formular auch unten für euch eingebettet.
 
 Solltet ihr versehentlich eine falsche Angabe gemacht haben, füllt das Formular einfach erneut aus. Wir werten die jüngste Rückmeldung aus.
 
@@ -37,7 +38,7 @@ components.html(f"""
    <style>
         .responsive-iframe-container {{
             position: relative;
-            width: 100%;
+            width: 99%;
             height: 0;
             padding-bottom: 120%; /* Etwas mehr Platz für das Formular */
             overflow: hidden;
@@ -47,7 +48,7 @@ components.html(f"""
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            width: 99%;
             height: 100%;
             /* Rahmenfarbe */
             border: 2px solid #2E4053; 

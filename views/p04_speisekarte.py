@@ -52,7 +52,7 @@ st.markdown(
 )
 
 # Titel
-st.markdown('<h1 class="serif-text">Speisekarte</h1>', unsafe_allow_html=True)
+st.markdown('<h1 class="serif-text">Speisen und Getränke</h1>', unsafe_allow_html=True)
 
 # Einleitung
 st.markdown(
@@ -179,7 +179,7 @@ st.markdown('<p class="serif-text" style="font-size: 24px;">Bon Appétit!</p>', 
 st.markdown(
     """
     <div class="contact-box">
-        Falls ihr Fragen zum Essen haben (bspw. Allergene), meldet euch gerne jederzeit bei uns! 🤍
+        Falls ihr Fragen zum Essen habt (bspw. Allergene), meldet euch gerne jederzeit bei uns! 🤍
     </div>
     """,
     unsafe_allow_html=True
