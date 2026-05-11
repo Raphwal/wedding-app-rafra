@@ -68,8 +68,8 @@ def crop_image_top_bottom(image_data, top_percent, bottom_percent):
     
     # Berechne die Pixel-Koordinaten
     # (left, top, right, bottom)
-    left = 0
-    right = width
+    left = width * (10 / 100)
+    right = width * (1 - (10 / 100))
     top = height * (top_percent / 100)
     bottom = height * (1 - (bottom_percent / 100))
     
