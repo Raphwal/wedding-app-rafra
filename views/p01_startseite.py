@@ -38,7 +38,7 @@ components.html(f"""
    <style>
         .responsive-iframe-container {{
             position: relative;
-            width: 99%;
+            width: 100%;
             height: 0;
             padding-bottom: 120%; /* Etwas mehr Platz für das Formular */
             overflow: hidden;
@@ -48,7 +48,7 @@ components.html(f"""
             position: absolute;
             top: 0;
             left: 0;
-            width: 99%;
+            width: 100%;
             height: 100%;
             /* Rahmenfarbe */
             border: 2px solid #2E4053; 

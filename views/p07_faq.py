@@ -19,7 +19,7 @@ img_data1 = crop_image_top_bottom(img_data1, top_percent=35, bottom_percent=15)
 st.markdown(
     """
     <style>
-        /* 1. Untertitel in Schieferblau */
+        /* 1. Untertitel & Texte */
         .subtitle {
             font-family: 'Playfair Display', serif;
             font-size: 28px;
@@ -30,19 +30,30 @@ st.markdown(
         }
 
         /* 2. Styling für die Expander (FAQ-Boxen) */
-        /* Wir nutzen ein helles Weiß-Blau, damit sie über den Blumen schweben */
         .stExpander {
-            background-color: rgba(255, 255, 255, 0.4); 
-            border: 1px solid rgba(46, 64, 83, 0.1);
-            margin-bottom: 10px;
-            border-radius: 10px;
-            box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+            background-color: rgba(255, 255, 255, 0.4) !important; 
+            border: 1px solid rgba(46, 64, 83, 0.1) !important;
+            margin-bottom: 10px !important;
+            border-radius: 10px !important;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.05) !important;
         }
 
-        /* Text innerhalb der Expander */
+        /* VEREINHEITLICHUNG: Alles IM Expander korrigieren */
+        /* Wir entfernen die "extra weißen Boxen" und vereinheitlichen das Padding */
+        .stExpander [data-testid="stVerticalBlock"] > div {
+            background-color: transparent !important; /* Entfernt die weiße Schicht im Inneren */
+            padding: 10px 5px !important; /* Einheitliches Padding für Text UND Bild */
+            box-shadow: none !important;
+        }
+
+        /* Spezielle Korrektur für Bilder im Expander, damit sie nicht am Rand kleben */
+        .stExpander [data-testid="stImage"] {
+            padding: 10px 0px !important;
+        }
+
         .stExpander p {
-            color: #2E4053;
-            font-size: 17px;
+            color: #2E4053 !important;
+            font-size: 17px !important;
         }
 
         /* 3. Die Kontakt-Box (Dashed & Clean) */

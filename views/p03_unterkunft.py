@@ -61,7 +61,7 @@ st.markdown(
         Direkt am <b>{location_name}</b> befindet sich das {location_name} Hotel. Dieses hat 18 Zimmer, die jeweils ein Doppelbett innehaben. 
         Das Hotel ist leider nicht barrierefrei. Haustiere sind nicht erlaubt. 
         Weitere Informationen zu den Zimmern und zum Hotel findet ihr unter 
-        <a href="{link_location}" target="_blank" style="color: #2E4053; font-weight: bold;">{link_location}</a>.<br>
+        <a href="{link_location}" target="_blank" style="color: #2E4053; font-weight: bold;">{link_location}</a>.<br><br>
         Zimmerreservierungen sind voraussichtlich ab <b>Ende Juni 2026</b> möglich. Wenn ihr ein Zimmer reservieren möchtet, 
         meldet euch bitte direkt beim Stadtgut Hotel und schreibt eine Mail an 
         <b><a href="mailto:{hotel_mail}" style="color: #2E4053; font-weight: bold;">{hotel_mail}</a></b>
@@ -72,11 +72,13 @@ st.markdown(
         🐣 Ein Babybett kann für 10 EUR pro Nacht dazugebucht werden. Gebt das einfach bei der Buchung mit an.<br>
         <br>
         Weiterhin sind mit einer ca. 10-minütigen Autofahrt auch folgende Hotels gut erreichbar: <br>
-        -- >  {hotel_name2}<br>
-        -- > {hotel_name3}<br>
-        -- > {hotel_name4}<br>
-        -- > {hotel_name5}<br>
-        -- > {hotel_name6}<br>   
+        <ul style="margin-top: 10px; padding-left: 40px; list-style-type: disc;">
+            <li>{hotel_name2}</li>
+            <li>{hotel_name3}</li>
+            <li>{hotel_name4}</li>
+            <li>{hotel_name5}</li>
+            <li>{hotel_name6}</li>
+        </ul>
     </div>
     """,
     unsafe_allow_html=True

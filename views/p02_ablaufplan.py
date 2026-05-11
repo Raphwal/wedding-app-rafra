@@ -5,8 +5,10 @@ from utils import load_decrypted_image
 
 
 # --- (VERSCHLÜSSELT) ---
-kontakt_name = decrypt_text(ENCRYPTED_CONTENT["name_trauzeugin"])
-kontakt_telefon = decrypt_text(ENCRYPTED_CONTENT["tele_trauzeugin"])
+kontakt_name_f = decrypt_text(ENCRYPTED_CONTENT["name_trauzeugin"])
+tele_trauzeugin = decrypt_text(ENCRYPTED_CONTENT["tele_trauzeugin"])
+kontakt_name_m = decrypt_text(ENCRYPTED_CONTENT["name_trauzeuge"])
+tele_trauzeuge = decrypt_text(ENCRYPTED_CONTENT["tele_trauzeuge"])
 date1 = decrypt_text(ENCRYPTED_CONTENT["date1"])
 date2 = decrypt_text(ENCRYPTED_CONTENT["date2"])
 location_name = decrypt_text(ENCRYPTED_CONTENT["location_name"])

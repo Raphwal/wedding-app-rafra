@@ -21,14 +21,23 @@ st.markdown("""
             border-radius: 15px;
             padding: 20px !important; /* Standard für Desktop */
             margin-bottom: 10px !important;
-            box-sizing: border-box !important;
-            max-width: 100% !important;
             
-            /* NEU: Sorgt dafür, dass Wörter umbrechen und nicht rausschieben */
+            /* Box-Modell absichern */
+            box-sizing: border-box !important;
+            display: block !important;
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+            
+        /* Wir zwingen ALLE Unterelemente (Texte, Links, Spans), 
+           dass sie niemals breiter als ihre Eltern-Box werden dürfen. */
+        [data-testid="stVerticalBlock"] > div * {
+            max-width: 100% !important;
             overflow-wrap: break-word !important;
             word-wrap: break-word !important;
             word-break: break-word !important;
-            hyphens: auto !important;
+            white-space: normal !important; /* Verhindert das "Nicht-Umbrechen" von Links */
+            box-sizing: border-box !important;
         }
 
         /* SPEZIAL-ANPASSUNG FÜR MOBILGERÄTE (Handys) */
@@ -39,8 +48,10 @@ st.markdown("""
             
             /* Verhindert, dass Streamlit auf dem Handy zu viel Rand links/rechts lässt */
             .main .block-container {
-                padding-left: 1rem !important;
-                padding-right: 1rem !important;
+                padding-left: 0.8rem !important;
+                padding-right: 0.8rem !important;
+                max-width: 100vw !important;
+                overflow-x: hidden !important;
             }
             
             .serif-text {
