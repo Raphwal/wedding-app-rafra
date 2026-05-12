@@ -19,7 +19,7 @@ img_data1 = crop_image_top_bottom(img_data1, top_percent=35, bottom_percent=15)
 st.markdown(
     """
     <style>
-        /* 1. Untertitel & Texte */
+        /* 1. Grund-Design der Seite */
         .subtitle {
             font-family: 'Playfair Display', serif;
             font-size: 28px;
@@ -29,34 +29,41 @@ st.markdown(
             margin-bottom: 20px;
         }
 
-        /* 2. Styling für die Expander (FAQ-Boxen) */
-        .stExpander {
-            background-color: rgba(255, 255, 255, 0.4) !important; 
+        /* 2. DER EXPANDER-FIX (Cross-Browser stabil) */
+        
+        /* Die äußere Hülle des Expanders */
+        div[data-testid="stExpander"] {
+            background-color: rgba(255, 255, 255, 0.4) !important;
             border: 1px solid rgba(46, 64, 83, 0.1) !important;
-            margin-bottom: 10px !important;
             border-radius: 10px !important;
             box-shadow: 2px 2px 8px rgba(0,0,0,0.05) !important;
+            margin-bottom: 10px !important;
         }
 
-        /* VEREINHEITLICHUNG: Alles IM Expander korrigieren */
-        /* Wir entfernen die "extra weißen Boxen" und vereinheitlichen das Padding */
-        .stExpander [data-testid="stVerticalBlock"] > div {
-            background-color: transparent !important; /* Entfernt die weiße Schicht im Inneren */
-            padding: 10px 5px !important; /* Einheitliches Padding für Text UND Bild */
+        /* Das Innere des Expanders (Der Inhaltsbereich) */
+        /* Wir zwingen ALLES darin, keinen eigenen Hintergrund zu haben */
+        div[data-testid="stExpanderDetails"] [data-testid="stVerticalBlock"] > div {
+            background-color: transparent !important;
+            background: none !important;
+            border: none !important;
             box-shadow: none !important;
+            padding: 0px !important; /* Wir steuern das Padding zentraler */
+            margin: 0px !important;
         }
 
-        /* Spezielle Korrektur für Bilder im Expander, damit sie nicht am Rand kleben */
-        .stExpander [data-testid="stImage"] {
-            padding: 10px 0px !important;
+        /* Der Text und das Bild brauchen trotzdem etwas Luft zum Rand */
+        div[data-testid="stExpanderDetails"] {
+            padding: 15px 20px !important;
         }
 
+        /* 3. TEXT-ANPASSUNGEN */
         .stExpander p {
             color: #2E4053 !important;
             font-size: 17px !important;
+            line-height: 1.5 !important;
         }
 
-        /* 3. Die Kontakt-Box (Dashed & Clean) */
+        /* 4. KONTAKT-BOX */
         .contact-box {
             font-size: 18px;
             color: #2E4053;

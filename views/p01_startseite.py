@@ -35,26 +35,34 @@ st.markdown("""
 """)
 
 components.html(f"""
-   <style>
+    <style>
         .responsive-iframe-container {{
             position: relative;
             width: 100%;
             height: 0;
-            padding-bottom: 120%; /* Etwas mehr Platz für das Formular */
+            /* Standard für Desktop */
+            padding-bottom: 120%; 
             overflow: hidden;
             background-color: transparent;
         }}
+
+        /* SPEZIAL-ANPASSUNG FÜR SMARTPHONES */
+        @media (max-width: 768px) {{
+            .responsive-iframe-container {{
+                /* Deutlich mehr Höhe auf dem Handy (ca. das 2,5-fache der Breite) */
+                padding-bottom: 250%; 
+            }}
+        }}
+
         .responsive-iframe-container iframe {{
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            /* Rahmenfarbe */
             border: 2px solid #2E4053; 
             border-radius: 15px;
-            
-         
+            box-shadow: 0 4px 12px rgba(46, 64, 83, 0.15);
         }}
     </style>
 
@@ -68,5 +76,6 @@ components.html(f"""
         </iframe>
     </div>
     """,
-    height=1000, 
+    
+    height=1500, 
 )
