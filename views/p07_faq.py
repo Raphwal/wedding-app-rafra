@@ -19,48 +19,62 @@ img_data1 = crop_image_top_bottom(img_data1, top_percent=35, bottom_percent=15)
 st.markdown(
     """
     <style>
-        /* 1. Grund-Design der Seite */
+        /* 1. Die Untertitel */
         .subtitle {
             font-family: 'Playfair Display', serif;
             font-size: 28px;
             font-weight: bold;
             color: #2E4053;
             margin-top: 20px;
-            margin-bottom: 20px;
         }
 
-        /* 2. DER EXPANDER-FIX (Cross-Browser stabil) */
+        /* 2. DER GROSSE FAQ-BOX-FIX */
         
-        /* Die äußere Hülle des Expanders */
-        div[data-testid="stExpander"] {
-            background-color: rgba(255, 255, 255, 0.4) !important;
-            border: 1px solid rgba(46, 64, 83, 0.1) !important;
-            border-radius: 10px !important;
-            box-shadow: 2px 2px 8px rgba(0,0,0,0.05) !important;
-            margin-bottom: 10px !important;
+        /* Weißer Kasten für JEDEN Expander (verhindert das Verschwinden bei Bildern) */
+        div[data-testid="stVerticalBlock"] > div:has(div[data-testid="stExpander"]) {
+            background-color: rgba(255, 255, 255, 0.15) !important;
+            padding: 0px !important; /* Padding wird im Expander-Inhalt geregelt */
+            border-radius: 15px !important;
+            margin-bottom: 15px !important;
+            box-sizing: border-box !important;
         }
 
-        /* Das Innere des Expanders (Der Inhaltsbereich) */
-        /* Wir zwingen ALLES darin, keinen eigenen Hintergrund zu haben */
-        div[data-testid="stExpanderDetails"] [data-testid="stVerticalBlock"] > div {
+        /* Expander-Hülle transparent machen */
+        .stExpander {
             background-color: transparent !important;
-            background: none !important;
             border: none !important;
             box-shadow: none !important;
-            padding: 0px !important; /* Wir steuern das Padding zentraler */
-            margin: 0px !important;
         }
 
-        /* Der Text und das Bild brauchen trotzdem etwas Luft zum Rand */
+        /* DER ENTSCHEIDENDE TEIL: Padding für den Inhalt */
+        /* Wir geben dem Inhaltsbereich (Details) ein festes Padding. 
+           Das drückt Text UND Bild gleichmäßig vom Rand weg. */
         div[data-testid="stExpanderDetails"] {
-            padding: 15px 20px !important;
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+            padding-bottom: 20px !important;
+            padding-top: 0px !important;
         }
 
-        /* 3. TEXT-ANPASSUNGEN */
-        .stExpander p {
+        /* Alle inneren Boxen (besonders die für Bilder) im Expander neutralisieren */
+        div[data-testid="stExpanderDetails"] [data-testid="stVerticalBlock"] > div {
+            background-color: transparent !important;
+            padding: 0px !important;
+            margin: 0px !important;
+            box-shadow: none !important;
+        }
+
+        /* 3. SCHRIFT-ANPASSUNG (Standard 18px wie in der Main) */
+        .stExpander p, .stExpander li, .stExpander span {
             color: #2E4053 !important;
-            font-size: 17px !important;
-            line-height: 1.5 !important;
+            font-size: 18px !important; /* Hier auf deinen Standard angepasst */
+            line-height: 1.6 !important;
+        }
+        
+        /* Die Überschrift des Expanders (Frage) ebenfalls anpassen */
+        .stExpander summary p {
+            font-size: 19px !important; 
+            font-weight: bold !important;
         }
 
         /* 4. KONTAKT-BOX */
@@ -73,7 +87,6 @@ st.markdown(
             border: 2px dashed #2E4053;
             border-radius: 15px;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(46, 64, 83, 0.1);
         }
     </style>
     """,
