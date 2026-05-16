@@ -8,6 +8,9 @@ tele_trauzeugin = decrypt_text(ENCRYPTED_CONTENT["tele_trauzeugin"])
 kontakt_name_m = decrypt_text(ENCRYPTED_CONTENT["name_trauzeuge"])
 tele_trauzeuge = decrypt_text(ENCRYPTED_CONTENT["tele_trauzeuge"])
 forms_url = decrypt_text(ENCRYPTED_CONTENT["forms_url"])
+date1 = decrypt_text(ENCRYPTED_CONTENT["date1"])
+date3 = decrypt_text(ENCRYPTED_CONTENT["date3"])
+couple_family_name = decrypt_text(ENCRYPTED_CONTENT["couple_family_name"])
 
 img_data1 = load_decrypted_image("assets/cat.bin")
 img_data2 = load_decrypted_image("assets/herz.bin")
@@ -133,6 +136,11 @@ with st.expander("🎲 Sind Spiele und Aktionen erlaubt?"):
 
 with st.expander("👯 Wie groß wird die Feier sein?"):
     st.write("Wir planen mit ca. 60 Personen.")
+
+with st.expander(f"💒  Findet am {date1} auch die standesamtliche Trauung statt?"):
+    st.write(f"Nein, die standesamtliche Trauung findet im {date3} im kleinen Kreis statt und sind von da an offiziell Familie {couple_family_name}. "\
+             f"Am {date1} findet unsere freie Trauung statt. Wir freuen uns, unseren Hochzeitstag gemeinsam mit euch in großer Runde zu feiern! "
+)
 
 # --- FAQ Während der Hochzeit ---
 st.markdown('<h3 class="subtitle">Während der Hochzeit</h3>', unsafe_allow_html=True)

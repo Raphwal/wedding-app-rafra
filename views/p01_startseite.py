@@ -19,7 +19,7 @@ st.markdown(f"""
 ## Liebe Gäste,
 wir freuen uns, am **{date1}** mit euch im {location_name} ({link_location}) unsere Hochzeit zu feiern!
 Alle wichtigen Informationen haben wir hier zusammengestellt. <br>
-Damit auch wir die beste Feier für euch planen können, bitten wir euch bis spätestens zum **31.12.2026** eure Rückmeldungen über folgendes [Google Formular]({forms_url}) zu geben.<br>
+Damit auch wir die beste Feier für euch planen können, bitten wir euch bis spätestens zum **31.10.2026** eure Rückmeldungen über folgendes [Google Formular]({forms_url}) zu geben.<br>
 Wir haben das Formular auch unten für euch eingebettet.
 
 Solltet ihr versehentlich eine falsche Angabe gemacht haben, füllt das Formular einfach erneut aus. Wir werten die jüngste Rückmeldung aus.
