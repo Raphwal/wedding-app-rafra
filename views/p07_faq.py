@@ -108,7 +108,7 @@ st.markdown('<h3 class="subtitle">Vor der Hochzeit</h3>', unsafe_allow_html=True
 
 with st.expander("👔 Gibt es einen Dresscode?"):
     st.write("Kommt auf jeden Fall so, dass ihr euch richtig wohlfühlt (Lasst die Jogginghose jedoch ruhig einen Abend Netflix-Pause machen). " \
-    "Ein bisschen schicker darf es sein, ohne dass ihr euch verkleidet fühlt. Und wenn ihr später auf der Tanzfläche in „Party-Modus-Komfort“ " \
+    "Ein bisschen schicker darf es sein, ohne dass ihr euch verkleidet fühlt. Und wenn ihr später auf der Tanzfläche in den „Party-Modus-Komfort“ " \
     "wechseln möchtet, packt euch gern etwas Bequemes zum Umziehen ein.")
 
 with st.expander("🎁 Was dürfen wir euch schenken?"):
@@ -138,7 +138,7 @@ with st.expander("👯 Wie groß wird die Feier sein?"):
     st.write("Wir planen mit ca. 60 Personen.")
 
 with st.expander(f"💒  Findet am {date1} auch die standesamtliche Trauung statt?"):
-    st.write(f"Nein, die standesamtliche Trauung findet im {date3} im kleinen Kreis statt und sind von da an offiziell Familie {couple_family_name}. "\
+    st.write(f"Nein, die standesamtliche Trauung findet im {date3} im kleinen Kreis statt. Wir sind von da an offiziell Familie {couple_family_name}. "\
              f"Am {date1} findet unsere freie Trauung statt. Wir freuen uns, unseren Hochzeitstag gemeinsam mit euch in großer Runde zu feiern! "
 )
 
@@ -152,7 +152,7 @@ with st.expander("🎊 Dürfen Blumen/Konfetti oder ähnliches gestreut werden?"
     st.write("Bitte nicht! Sowohl das Streuen von Blüten, Konfetti als auch Reis im Innen- und Außenbereich sind nicht erlaubt und wird für uns teuer. ")
 
 with st.expander("📸 Können wir Fotos hochladen? "):
-    st.write("Ihr könnt eure Fotos, die ihr während der Hochzeit oder auch in Vorbereitung zur Hochzeit macht gern auf Everlense hochladen. " \
+    st.write("Ihr könnt eure Fotos, die ihr während der Hochzeit oder auch in Vorbereitung zur Hochzeit macht, gern auf Everlense hochladen. " \
     " Den Link zu Everlense findet ihr ca. 2 Monate vor der Hochzeit auf der Seite. ")
 
 #with st.expander("🤱 Gibt es ein Stillzimmer?"):

@@ -159,8 +159,8 @@ st.markdown("""
 
 st.markdown('<p class="menu-section">🍲 Saucen</p>', unsafe_allow_html=True)
 st.markdown("""
-*  BBQ Sauce, Honig- Senf, Guacamole,  
-*  Aioli, Senf, Ketchup 
+*  BBQ Sauce, Honig- Senf & Guacamole  
+*  Aioli, Senf & Ketchup 
 *  Butter & Kräuterbutter 
 """)
 
