@@ -61,7 +61,7 @@ st.markdown(f'<h2 class="subtitle">Freitag, <b>{date1}</b> </h2>', unsafe_allow_
 
 events_day1 = [
     (f"Empfang im {location_name}", "ab 16:00 Uhr"),
-    (f"Beginn der freien Trauung", "ab 16:30 Uhr"),
+    (f"Beginn der freien Trauung", "ab 16:30 Uhr - Bitte Handys wegstecken und genießen. Die Fotografen halten die Momente fest."),
     (f"Fotos", "ab 17:00 Uhr"),
     (f"Eröffnung des Buffets", "ab 18:30 Uhr"),
     (f"Torte anschneiden & Dessert", "gegen 20:00 Uhr"),

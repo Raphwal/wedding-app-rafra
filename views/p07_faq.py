@@ -153,7 +153,7 @@ with st.expander("🎊 Dürfen Blumen/Konfetti oder ähnliches gestreut werden?"
 
 with st.expander("📸 Können wir Fotos hochladen? "):
     st.write("Ihr könnt eure Fotos, die ihr während der Hochzeit oder auch in Vorbereitung zur Hochzeit macht, gern auf Everlense hochladen. " \
-    " Den Link zu Everlense findet ihr ca. 2 Monate vor der Hochzeit auf der Seite. ")
+    " Den Link zu Everlense findet ihr ca. 2 Monate vor der Hochzeit auf der Seite. Bitte beachtet, dass während der freien Trauung keine Fotos erwünscht sind - das übernehmen die Fotografen.")
 
 #with st.expander("🤱 Gibt es ein Stillzimmer?"):
 #    st.write(f"+Ja, ein Raum hinter dem Bankettraum steht zur Verfügung. Bitte wendet euch vor Ort einfach an **{kontakt_name_m}**.")
