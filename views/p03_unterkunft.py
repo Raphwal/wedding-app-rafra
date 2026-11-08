@@ -62,7 +62,7 @@ st.markdown(
         Das Hotel ist leider nicht barrierefrei. Haustiere sind nicht erlaubt. 
         Weitere Informationen zu den Zimmern und zum Hotel findet ihr unter 
         <a href="{link_location}" target="_blank" style="color: #2E4053; font-weight: bold;">{link_location}</a>.<br><br>
-        Zimmerreservierungen sind voraussichtlich ab sofort möglich. Wenn ihr ein Zimmer reservieren möchtet, 
+        Zimmerreservierungen sind ab sofort möglich. Wenn ihr ein Zimmer reservieren möchtet, 
         meldet euch bitte direkt beim Stadtgut Hotel und schreibt eine Mail an 
         <b><a href="mailto:{hotel_mail}" style="color: #2E4053; font-weight: bold;">{hotel_mail}</a></b>
         mit dem Betreff „Hotelzimmerbuchung Hochzeit {couple_name}“ und der Angabe von Namen, Anschrift und Geburtsdaten.
